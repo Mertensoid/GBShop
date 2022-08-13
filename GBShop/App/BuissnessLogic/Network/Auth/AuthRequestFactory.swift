@@ -13,5 +13,5 @@ protocol AuthRequestFactory {
         userName: String,
         password: String,
         completionHandler: @escaping
-    (AFDataResponse<LoginResult>) -> Void)
+        (AFDataResponse<LoginResult>) -> Void)
 }
