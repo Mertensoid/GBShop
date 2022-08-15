@@ -45,6 +45,10 @@
 		8499CEA628A8FCA4008A8CA2 /* GetGoodResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA528A8FCA4008A8CA2 /* GetGoodResult.swift */; };
 		8499CEA828A91CF8008A8CA2 /* GetCatalogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA728A91CF8008A8CA2 /* GetCatalogResult.swift */; };
 		8499CEAA28A91D5D008A8CA2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA928A91D5D008A8CA2 /* Product.swift */; };
+		8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */; };
+		8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */; };
+		8499CEB628AA819A008A8CA2 /* CustomDecodableSerializerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB528AA819A008A8CA2 /* CustomDecodableSerializerStub.swift */; };
+		8499CEB828AA8237008A8CA2 /* CustomDecodableSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB728AA8237008A8CA2 /* CustomDecodableSerializerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		8499CEA528A8FCA4008A8CA2 /* GetGoodResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoodResult.swift; sourceTree = "<group>"; };
 		8499CEA728A91CF8008A8CA2 /* GetCatalogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCatalogResult.swift; sourceTree = "<group>"; };
 		8499CEA928A91D5D008A8CA2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryTests.swift; sourceTree = "<group>"; };
+		8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryStub.swift; sourceTree = "<group>"; };
+		8499CEB528AA819A008A8CA2 /* CustomDecodableSerializerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodableSerializerStub.swift; sourceTree = "<group>"; };
+		8499CEB728AA8237008A8CA2 /* CustomDecodableSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecodableSerializerTests.swift; sourceTree = "<group>"; };
 		8F53346A5B13D4B41BF41B75 /* Pods_GBShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44E4C0351610D60FA25C111 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3CD1ABFD19820B112470ECE /* Pods_GBShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +212,8 @@
 			children = (
 				8499CE43289FE5B4008A8CA2 /* GBShopTests.swift */,
 				8499CE9628A78F3B008A8CA2 /* ResponseCodableTests */,
+				8499CEAB28AA75EF008A8CA2 /* RequestFactoryTests */,
+				8499CEB228AA8049008A8CA2 /* DataRequestTests */,
 			);
 			path = GBShopTests;
 			sourceTree = "<group>";
@@ -379,6 +389,24 @@
 				8499CEA328A8FB9D008A8CA2 /* GetCatalogRequestFactory.swift */,
 			);
 			path = GetCatalog;
+			sourceTree = "<group>";
+		};
+		8499CEAB28AA75EF008A8CA2 /* RequestFactoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */,
+				8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */,
+			);
+			path = RequestFactoryTests;
+			sourceTree = "<group>";
+		};
+		8499CEB228AA8049008A8CA2 /* DataRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				8499CEB728AA8237008A8CA2 /* CustomDecodableSerializerTests.swift */,
+				8499CEB528AA819A008A8CA2 /* CustomDecodableSerializerStub.swift */,
+			);
+			path = DataRequestTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -654,9 +682,13 @@
 			files = (
 				8499CE44289FE5B4008A8CA2 /* GBShopTests.swift in Sources */,
 				8499CE9328A78E46008A8CA2 /* ResponseCodableTests.swift in Sources */,
+				8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */,
 				8499CE9528A78F31008A8CA2 /* PostStub.swift in Sources */,
+				8499CEB628AA819A008A8CA2 /* CustomDecodableSerializerStub.swift in Sources */,
 				8499CE9828A78F70008A8CA2 /* ApiErrorStub.swift in Sources */,
+				8499CEB828AA8237008A8CA2 /* CustomDecodableSerializerTests.swift in Sources */,
 				8499CE9A28A78F87008A8CA2 /* ErrorParserStub.swift in Sources */,
+				8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
