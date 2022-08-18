@@ -1,14 +1,15 @@
 //
-//  RequestFactory.swift
-//  GBShop
+//  RequestFactoryStub.swift
+//  GBShopTests
 //
-//  Created by admin on 12.08.2022.
+//  Created by admin on 15.08.2022.
 //
 
 import Foundation
 import Alamofire
+@testable import GBShop
 
-class RequestFactory {
+class RequestFactoryStub {
     func makeErrorParser() -> AbstractErrorParser {
         return ErrorParser()
     }
@@ -65,4 +66,3 @@ class RequestFactory {
             queue: sessionQueue)
     }
 }
-
