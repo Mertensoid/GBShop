@@ -12,7 +12,7 @@ class Registration: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://vapor-app-mertensoid.herokuapp.com/")!
     
     init(
         errorParser: AbstractErrorParser,
@@ -53,8 +53,8 @@ extension Registration: RegistrationRequestFactory {
 extension Registration {
     struct Registration: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
+        let method: HTTPMethod = .post
+        let path: String = "register"
         let id: Int
         let userName: String
         let password: String

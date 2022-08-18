@@ -24,9 +24,6 @@ class ResponseCodable: XCTestCase {
     
     func testShoudDownloadAndParse() {
         
-        //Я так понимаю, данные в методичке устаревшие, а именно .responseCodable не существует, поэтому попытался сделать по документации на Alamofire
-        //На сколько это правильно, в чем разница между .response и .responseDecodable, как использовать в тесте errorParser?
-        
         AF
             .request("https://jsonplaceholder.typicode.com/posts/1")
             .response { resp in
@@ -38,13 +35,5 @@ class ResponseCodable: XCTestCase {
                 self.expectation.fulfill()
             }
         wait(for: [expectation], timeout: 10.0)
-        
-//            .responseDecodable(of: ErrorParserStub.self) { resp in                <- это не работает
-//                switch resp.result {
-//                case .success(_): break
-//                case .failure:
-//                    XCTFail()
-//                }
-//            }
     }
 }
