@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// Протокол, описывающий обязательные функции для отправки запроса на выход
 protocol LogoutRequestFactory {
     func logout(
         id: Int,

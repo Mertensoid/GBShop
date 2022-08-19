@@ -8,12 +8,17 @@
 import Foundation
 import Alamofire
 
+/// Запрос на получение списка отзывов
 class GetReviewList: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: Constants.serverURL.rawValue)!
-    
+    let baseUrl = URL(string: Constants.serverURL)!
+    /// Инициализватор запроса на получение списка отзывов
+    /// - Parameters:
+    ///   - errorParser: обработчик ошибок
+    ///   - sessionManager: экземпляр сессии для отправки запроса
+    ///   - queue: тип очереди для отправки запроса
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -25,7 +30,11 @@ class GetReviewList: AbstractRequestFactory {
 }
 
 extension GetReviewList: GetReviewListRequestFactory {
-    
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func getReviewList(
         productId: Int,
         completionHandler: @escaping (AFDataResponse<GetReviewListResult>) -> Void) {

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Структура ответа на запрос изменения параметром пользователя
 struct ChangeUserDataResult: Codable {
     let result: Int
 }

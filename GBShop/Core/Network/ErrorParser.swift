@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Обработчик ошибок
 class ErrorParser: AbstractErrorParser {
     func parse(_ result: Error) -> Error {
         return result

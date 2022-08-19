@@ -8,12 +8,17 @@
 import Foundation
 import Alamofire
 
+/// Запрос на выход
 class Logout: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: Constants.serverURL.rawValue)!
-    
+    let baseUrl = URL(string: Constants.serverURL)!
+    /// Инициализватор запроса на выход
+    /// - Parameters:
+    ///   - errorParser: обработчик ошибок
+    ///   - sessionManager: экземпляр сессии для отправки запроса
+    ///   - queue: тип очереди для отправки запроса
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -25,7 +30,11 @@ class Logout: AbstractRequestFactory {
 }
 
 extension Logout: LogoutRequestFactory {
-    
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func logout(
         id: Int,
         completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {

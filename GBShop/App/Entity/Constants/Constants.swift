@@ -7,6 +7,9 @@
 
 import Foundation
 
-enum Constants: String {
-    case serverURL = "https://vapor-app-mertensoid.herokuapp.com/"
+/// Хранение констант для многократного использования
+enum Constants  {
+    static let serverURL = "https://vapor-app-mertensoid.herokuapp.com/"
+//    "https://vapor-app-mertensoid.herokuapp.com/"
+//    "http://127.0.0.1:8080"
 }

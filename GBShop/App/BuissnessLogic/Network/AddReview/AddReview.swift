@@ -8,12 +8,17 @@
 import Foundation
 import Alamofire
 
+/// Запрос на добавление нового отзыва
 class AddReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: Constants.serverURL.rawValue)!
-    
+    let baseUrl = URL(string: Constants.serverURL)!
+    /// Инициализватор запроса на добавление нового отзыва
+    /// - Parameters:
+    ///   - errorParser: обработчик ошибок
+    ///   - sessionManager: экземпляр сессии для отправки запроса
+    ///   - queue: тип очереди для отправки запроса
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -25,6 +30,11 @@ class AddReview: AbstractRequestFactory {
 }
 
 extension AddReview: AddReviewRequestFactory {
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func addReview(
         userId: Int,
         text: String,

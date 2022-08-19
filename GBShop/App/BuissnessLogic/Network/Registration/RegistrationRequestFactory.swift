@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// Протокол, описывающий обязательные функции для отправки запроса на регистрацию
 protocol RegistrationRequestFactory {
     func registration(
         id: Int,

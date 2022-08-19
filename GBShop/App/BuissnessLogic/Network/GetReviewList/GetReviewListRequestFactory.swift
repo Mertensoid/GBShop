@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// Протокол, описывающий обязательные функции для отправки запроса на получение списка отзывов
 protocol GetReviewListRequestFactory {
     func getReviewList(
         productId: Int,

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Структура ответа на запрос удаления отзыва
 struct DeleteReviewResult: Codable {
     let result: Int
 }

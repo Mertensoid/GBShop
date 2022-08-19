@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Структура параметров пользователя для отвера на запрос логина
 struct User: Codable {
     let id: Int
     let login: String
