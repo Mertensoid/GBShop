@@ -331,7 +331,7 @@
 				8499CE8B28A77172008A8CA2 /* ChangeUserData */,
 				8499CE9B28A8FB02008A8CA2 /* GetGood */,
 				8499CE9C28A8FB0F008A8CA2 /* GetCatalog */,
-				84F85E9628AF4EEC0039E8BC /* GetReview */,
+				84F85E9628AF4EEC0039E8BC /* AddReview */,
 				84F85E9728AF4F220039E8BC /* GetReviewList */,
 				84F85E9828AF4F3A0039E8BC /* DeleteReview */,
 				8499CE7928A613FF008A8CA2 /* RequestFactory.swift */,
@@ -413,13 +413,13 @@
 			path = RequestFactoryTests;
 			sourceTree = "<group>";
 		};
-		84F85E9628AF4EEC0039E8BC /* GetReview */ = {
+		84F85E9628AF4EEC0039E8BC /* AddReview */ = {
 			isa = PBXGroup;
 			children = (
 				84F85EA128AF4FBC0039E8BC /* AddReview.swift */,
 				84F85EA328AF4FD40039E8BC /* AddReviewRequestFactory.swift */,
 			);
-			path = GetReview;
+			path = AddReview;
 			sourceTree = "<group>";
 		};
 		84F85E9728AF4F220039E8BC /* GetReviewList */ = {

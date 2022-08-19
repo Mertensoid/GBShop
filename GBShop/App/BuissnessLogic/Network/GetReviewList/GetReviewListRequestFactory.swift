@@ -11,5 +11,5 @@ import Alamofire
 protocol GetReviewListRequestFactory {
     func getReviewList(
         productId: Int,
-        completionHandler: @escaping (AFDataResponse<[GetReviewListResult]>) -> Void)
+        completionHandler: @escaping (AFDataResponse<GetReviewListResult>) -> Void)
 }

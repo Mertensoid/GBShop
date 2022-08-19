@@ -28,7 +28,7 @@ extension GetReviewList: GetReviewListRequestFactory {
     
     func getReviewList(
         productId: Int,
-        completionHandler: @escaping (AFDataResponse<[GetReviewListResult]>) -> Void) {
+        completionHandler: @escaping (AFDataResponse<GetReviewListResult>) -> Void) {
             let requestModel = GetReviewList(
                 baseUrl: baseUrl,
                 productId: productId

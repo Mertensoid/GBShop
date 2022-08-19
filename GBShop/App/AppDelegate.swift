@@ -86,6 +86,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print(error.localizedDescription)
                     }
                 }
+            let addReview = requestFactory.makeAddReviewRequestFactory()
+            addReview.addReview(
+                userId: 123,
+                text: "Хороший отзыв") { response in
+                    switch response.result {
+                    case .success(let addReview):
+                        print(addReview)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            let deleteReview = requestFactory.makeDeleteReviewRequestFactory()
+            deleteReview.deleteReview(commentId: 123) { response in
+                    switch response.result {
+                    case .success(let deleteReview):
+                        print(deleteReview)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            let getReviewList = requestFactory.makeGetReviewListRequestFactory()
+            getReviewList.getReviewList(productId: 123) { response in
+                    switch response.result {
+                    case .success(let getReviewList):
+                        print(getReviewList)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             return true
         }
 
