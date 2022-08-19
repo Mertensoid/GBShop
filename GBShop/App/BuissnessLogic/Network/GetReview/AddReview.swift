@@ -1,14 +1,14 @@
 //
-//  Logout.swift
+//  AddReview.swift
 //  GBShop
 //
-//  Created by admin on 13.08.2022.
+//  Created by admin on 19.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-class Logout: AbstractRequestFactory {
+class AddReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -24,31 +24,35 @@ class Logout: AbstractRequestFactory {
         }
 }
 
-extension Logout: LogoutRequestFactory {
-    
-    func logout(
-        id: Int,
-        completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {
-            let requestModel = Logout(
+extension AddReview: AddReviewRequestFactory {
+    func addReview(
+        userId: Int,
+        text: String,
+        completionHandler: @escaping (AFDataResponse<AddReviewResult>) -> Void) {
+            let requestModel = AddReview(
                 baseUrl: baseUrl,
-                id: id)
+                userId: userId,
+                text: text)
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-        }
+    }
 }
 
-extension Logout {
-    struct Logout: RequestRouter {
+extension AddReview {
+    struct AddReview: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "logout"
-        let id: Int
+        let path: String = "addReview"
+        let userId: Int
+        let text: String
         var parameters: Parameters? {
             return [
-                "id_user": id
+                "id_user": userId,
+                "text": text
             ]
         }
     }
 }
+

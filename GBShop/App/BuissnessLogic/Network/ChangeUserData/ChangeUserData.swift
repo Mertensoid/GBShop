@@ -12,7 +12,7 @@ class ChangeUserData: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://vapor-app-mertensoid.herokuapp.com/")!
+    let baseUrl = URL(string: Constants.serverURL.rawValue)!
     
     init(
         errorParser: AbstractErrorParser,

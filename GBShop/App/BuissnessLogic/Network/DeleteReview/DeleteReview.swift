@@ -1,14 +1,14 @@
 //
-//  Logout.swift
+//  DeleteReview.swift
 //  GBShop
 //
-//  Created by admin on 13.08.2022.
+//  Created by admin on 19.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-class Logout: AbstractRequestFactory {
+class DeleteReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -24,30 +24,29 @@ class Logout: AbstractRequestFactory {
         }
 }
 
-extension Logout: LogoutRequestFactory {
-    
-    func logout(
-        id: Int,
-        completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {
-            let requestModel = Logout(
+extension DeleteReview: DeleteReviewRequestFactory {
+    func deleteReview(
+        commentId: Int,
+        completionHandler: @escaping (AFDataResponse<DeleteReviewResult>) -> Void) {
+            let requestModel = DeleteReview(
                 baseUrl: baseUrl,
-                id: id)
+                commentId: commentId)
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-        }
+    }
 }
 
-extension Logout {
-    struct Logout: RequestRouter {
+extension DeleteReview {
+    struct DeleteReview: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "logout"
-        let id: Int
+        let path: String = "deleteReview"
+        let commentId: Int
         var parameters: Parameters? {
             return [
-                "id_user": id
+                "id_comment": commentId
             ]
         }
     }

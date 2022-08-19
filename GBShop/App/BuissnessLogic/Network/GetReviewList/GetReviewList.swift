@@ -1,14 +1,14 @@
 //
-//  Logout.swift
+//  GetReviewList.swift
 //  GBShop
 //
-//  Created by admin on 13.08.2022.
+//  Created by admin on 19.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-class Logout: AbstractRequestFactory {
+class GetReviewList: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -24,31 +24,33 @@ class Logout: AbstractRequestFactory {
         }
 }
 
-extension Logout: LogoutRequestFactory {
+extension GetReviewList: GetReviewListRequestFactory {
     
-    func logout(
-        id: Int,
-        completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {
-            let requestModel = Logout(
+    func getReviewList(
+        productId: Int,
+        completionHandler: @escaping (AFDataResponse<[GetReviewListResult]>) -> Void) {
+            let requestModel = GetReviewList(
                 baseUrl: baseUrl,
-                id: id)
+                productId: productId
+            )
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-        }
+    }
 }
 
-extension Logout {
-    struct Logout: RequestRouter {
+extension GetReviewList {
+    struct GetReviewList: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "logout"
-        let id: Int
+        let path: String = "getReviewList"
+        let productId: Int
         var parameters: Parameters? {
             return [
-                "id_user": id
+                "id_product": productId
             ]
         }
     }
 }
+

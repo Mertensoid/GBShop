@@ -46,6 +46,17 @@
 		8499CEAA28A91D5D008A8CA2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA928A91D5D008A8CA2 /* Product.swift */; };
 		8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */; };
 		8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */; };
+		84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9928AF4F620039E8BC /* DeleteReview.swift */; };
+		84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */; };
+		84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9D28AF4F910039E8BC /* GetReviewList.swift */; };
+		84F85EA028AF4FA80039E8BC /* GetReviewListRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9F28AF4FA80039E8BC /* GetReviewListRequestFactory.swift */; };
+		84F85EA228AF4FBC0039E8BC /* AddReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EA128AF4FBC0039E8BC /* AddReview.swift */; };
+		84F85EA428AF4FD40039E8BC /* AddReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EA328AF4FD40039E8BC /* AddReviewRequestFactory.swift */; };
+		84F85EA628AF51080039E8BC /* AddReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EA528AF51080039E8BC /* AddReviewResult.swift */; };
+		84F85EA828AF51190039E8BC /* GetReviewListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EA728AF51190039E8BC /* GetReviewListResult.swift */; };
+		84F85EAA28AF51330039E8BC /* DeleteReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EA928AF51330039E8BC /* DeleteReviewResult.swift */; };
+		84F85EAC28AF730C0039E8BC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EAB28AF730C0039E8BC /* Review.swift */; };
+		84F85EB228AF783F0039E8BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85EB128AF783F0039E8BC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +123,17 @@
 		8499CEA928A91D5D008A8CA2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryTests.swift; sourceTree = "<group>"; };
 		8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryStub.swift; sourceTree = "<group>"; };
+		84F85E9928AF4F620039E8BC /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
+		84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReviewRequestFactory.swift; sourceTree = "<group>"; };
+		84F85E9D28AF4F910039E8BC /* GetReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewList.swift; sourceTree = "<group>"; };
+		84F85E9F28AF4FA80039E8BC /* GetReviewListRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewListRequestFactory.swift; sourceTree = "<group>"; };
+		84F85EA128AF4FBC0039E8BC /* AddReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReview.swift; sourceTree = "<group>"; };
+		84F85EA328AF4FD40039E8BC /* AddReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewRequestFactory.swift; sourceTree = "<group>"; };
+		84F85EA528AF51080039E8BC /* AddReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewResult.swift; sourceTree = "<group>"; };
+		84F85EA728AF51190039E8BC /* GetReviewListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewListResult.swift; sourceTree = "<group>"; };
+		84F85EA928AF51330039E8BC /* DeleteReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReviewResult.swift; sourceTree = "<group>"; };
+		84F85EAB28AF730C0039E8BC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		84F85EB128AF783F0039E8BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F53346A5B13D4B41BF41B75 /* Pods_GBShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44E4C0351610D60FA25C111 /* Pods-GBShop-GBShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3CD1ABFD19820B112470ECE /* Pods_GBShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,14 +289,10 @@
 		8499CE62289FE92A008A8CA2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				8499CE7028A14CD9008A8CA2 /* User.swift */,
-				8499CE6E28A14CCB008A8CA2 /* LoginResult.swift */,
-				8499CE7B28A75C8E008A8CA2 /* LogoutResult.swift */,
-				8499CE8928A76481008A8CA2 /* RegistrationResult.swift */,
-				8499CE9028A771F4008A8CA2 /* ChangeUserDataResult.swift */,
-				8499CEA528A8FCA4008A8CA2 /* GetGoodResult.swift */,
-				8499CEA928A91D5D008A8CA2 /* Product.swift */,
-				8499CEA728A91CF8008A8CA2 /* GetCatalogResult.swift */,
+				84F85EB028AF78120039E8BC /* Constants */,
+				84F85EAD28AF73200039E8BC /* User */,
+				84F85EAE28AF73270039E8BC /* Products */,
+				84F85EAF28AF73300039E8BC /* Reviews */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -313,6 +331,9 @@
 				8499CE8B28A77172008A8CA2 /* ChangeUserData */,
 				8499CE9B28A8FB02008A8CA2 /* GetGood */,
 				8499CE9C28A8FB0F008A8CA2 /* GetCatalog */,
+				84F85E9628AF4EEC0039E8BC /* GetReview */,
+				84F85E9728AF4F220039E8BC /* GetReviewList */,
+				84F85E9828AF4F3A0039E8BC /* DeleteReview */,
 				8499CE7928A613FF008A8CA2 /* RequestFactory.swift */,
 			);
 			path = Network;
@@ -390,6 +411,74 @@
 				8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */,
 			);
 			path = RequestFactoryTests;
+			sourceTree = "<group>";
+		};
+		84F85E9628AF4EEC0039E8BC /* GetReview */ = {
+			isa = PBXGroup;
+			children = (
+				84F85EA128AF4FBC0039E8BC /* AddReview.swift */,
+				84F85EA328AF4FD40039E8BC /* AddReviewRequestFactory.swift */,
+			);
+			path = GetReview;
+			sourceTree = "<group>";
+		};
+		84F85E9728AF4F220039E8BC /* GetReviewList */ = {
+			isa = PBXGroup;
+			children = (
+				84F85E9D28AF4F910039E8BC /* GetReviewList.swift */,
+				84F85E9F28AF4FA80039E8BC /* GetReviewListRequestFactory.swift */,
+			);
+			path = GetReviewList;
+			sourceTree = "<group>";
+		};
+		84F85E9828AF4F3A0039E8BC /* DeleteReview */ = {
+			isa = PBXGroup;
+			children = (
+				84F85E9928AF4F620039E8BC /* DeleteReview.swift */,
+				84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */,
+			);
+			path = DeleteReview;
+			sourceTree = "<group>";
+		};
+		84F85EAD28AF73200039E8BC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8499CE7028A14CD9008A8CA2 /* User.swift */,
+				8499CE6E28A14CCB008A8CA2 /* LoginResult.swift */,
+				8499CE7B28A75C8E008A8CA2 /* LogoutResult.swift */,
+				8499CE8928A76481008A8CA2 /* RegistrationResult.swift */,
+				8499CE9028A771F4008A8CA2 /* ChangeUserDataResult.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		84F85EAE28AF73270039E8BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8499CEA528A8FCA4008A8CA2 /* GetGoodResult.swift */,
+				8499CEA928A91D5D008A8CA2 /* Product.swift */,
+				8499CEA728A91CF8008A8CA2 /* GetCatalogResult.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		84F85EAF28AF73300039E8BC /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				84F85EA528AF51080039E8BC /* AddReviewResult.swift */,
+				84F85EAB28AF730C0039E8BC /* Review.swift */,
+				84F85EA728AF51190039E8BC /* GetReviewListResult.swift */,
+				84F85EA928AF51330039E8BC /* DeleteReviewResult.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		84F85EB028AF78120039E8BC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				84F85EB128AF783F0039E8BC /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -632,18 +721,24 @@
 			files = (
 				8499CE8728A76438008A8CA2 /* RegistrationRequestFactory.swift in Sources */,
 				8499CE7F28A75D12008A8CA2 /* LogoutRequestFactory.swift in Sources */,
+				84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */,
 				8499CE6F28A14CCB008A8CA2 /* LoginResult.swift in Sources */,
 				8499CE8528A76416008A8CA2 /* Registration.swift in Sources */,
 				8499CE7C28A75C8E008A8CA2 /* LogoutResult.swift in Sources */,
 				8499CE2D289FE5B3008A8CA2 /* AppDelegate.swift in Sources */,
 				8499CEA228A8FB7F008A8CA2 /* GetCatalog.swift in Sources */,
 				8499CE6D28A14BF7008A8CA2 /* RequestRouter.swift in Sources */,
+				84F85EA028AF4FA80039E8BC /* GetReviewListRequestFactory.swift in Sources */,
 				8499CE8128A75D1F008A8CA2 /* Logout.swift in Sources */,
+				84F85EA428AF4FD40039E8BC /* AddReviewRequestFactory.swift in Sources */,
+				84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */,
 				8499CEA428A8FB9D008A8CA2 /* GetCatalogRequestFactory.swift in Sources */,
 				8499CE6928A145DD008A8CA2 /* ErrorParser.swift in Sources */,
 				8499CE6728A141D5008A8CA2 /* AbstractErrorParser.swift in Sources */,
 				8499CE6B28A147A5008A8CA2 /* DataRequest.swift in Sources */,
+				84F85EA828AF51190039E8BC /* GetReviewListResult.swift in Sources */,
 				8499CEA028A8FB70008A8CA2 /* GetGoodRequestFactory.swift in Sources */,
+				84F85EAA28AF51330039E8BC /* DeleteReviewResult.swift in Sources */,
 				8499CE7A28A613FF008A8CA2 /* RequestFactory.swift in Sources */,
 				8499CE9128A771F4008A8CA2 /* ChangeUserDataResult.swift in Sources */,
 				8499CEA828A91CF8008A8CA2 /* GetCatalogResult.swift in Sources */,
@@ -652,9 +747,14 @@
 				8499CE8F28A771D4008A8CA2 /* ChangeUserDataRequestFactory.swift in Sources */,
 				8499CE8A28A76481008A8CA2 /* RegistrationResult.swift in Sources */,
 				8499CE7128A14CD9008A8CA2 /* User.swift in Sources */,
+				84F85EA628AF51080039E8BC /* AddReviewResult.swift in Sources */,
+				84F85EAC28AF730C0039E8BC /* Review.swift in Sources */,
 				8499CE7828A61316008A8CA2 /* Auth.swift in Sources */,
+				84F85EA228AF4FBC0039E8BC /* AddReview.swift in Sources */,
 				8499CEA628A8FCA4008A8CA2 /* GetGoodResult.swift in Sources */,
+				84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */,
 				8499CE8D28A771BA008A8CA2 /* ChangeUserData.swift in Sources */,
+				84F85EB228AF783F0039E8BC /* Constants.swift in Sources */,
 				8499CEAA28A91D5D008A8CA2 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
