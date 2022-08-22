@@ -8,10 +8,12 @@
 import Foundation
 import Alamofire
 
+/// Перечисление возможных способов кодирования запроса
 enum RequestRouterEncoding {
     case url, json
 }
 
+/// Протокол, описывающий обязательные параметры запроса
 protocol RequestRouter: URLRequestConvertible {
     var baseUrl: URL { get }
     var method: HTTPMethod { get }
@@ -30,6 +32,8 @@ extension RequestRouter {
         return .url
     }
     
+    /// функция кодирования запроса
+    /// - Returns: кодированный запрос
     func asURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: fullUrl)
         urlRequest.httpMethod = method.rawValue

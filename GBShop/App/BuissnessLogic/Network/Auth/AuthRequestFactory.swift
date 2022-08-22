@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// Протокол, описывающий обязательные функции для отправки запроса на логин
 protocol AuthRequestFactory {
     func login(
         userName: String,

@@ -1,21 +1,20 @@
 //
-//  Auth.swift
+//  DeleteReview.swift
 //  GBShop
 //
-//  Created by admin on 12.08.2022.
+//  Created by admin on 19.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-/// Запрос на логин
-class Auth: AbstractRequestFactory {
+/// Запрос на удаление нового отзыва
+class DeleteReview: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    
-    /// Инициализватор запроса на логин
+    /// Инициализватор запроса на удаление отзыва
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,42 +29,34 @@ class Auth: AbstractRequestFactory {
         }
 }
 
-extension Auth: AuthRequestFactory {
+extension DeleteReview: DeleteReviewRequestFactory {
     /// Отправка запроса
     /// - Parameters:
     ///   - userName: имя пользователя
     ///   - password: пароль пользователя
     ///   - completionHandler: тип функции AF, выполняющей сам запрос
-    func login(
-        userName: String,
-        password: String,
-        completionHandler: @escaping
-        (AFDataResponse<LoginResult>) -> Void) {
-            let requestModel = Login(
+    func deleteReview(
+        commentId: Int,
+        completionHandler: @escaping (AFDataResponse<DeleteReviewResult>) -> Void) {
+            let requestModel = DeleteReview(
                 baseUrl: baseUrl,
-                login: userName,
-                password:
-                    password)
+                commentId: commentId)
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-            
-        }
+    }
 }
 
-extension Auth {
-    /// Структура запроса логина
-    struct Login: RequestRouter {
+extension DeleteReview {
+    struct DeleteReview: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "login"
-        let login: String
-        let password: String
+        let path: String = "deleteReview"
+        let commentId: Int
         var parameters: Parameters? {
             return [
-                "username": login,
-                "password": password
+                "id_comment": commentId
             ]
         }
     }

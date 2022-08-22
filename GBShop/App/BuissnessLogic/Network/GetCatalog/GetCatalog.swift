@@ -8,12 +8,17 @@
 import Foundation
 import Alamofire
 
+/// Запрос на получение каталога
 class GetCatalog: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://vapor-app-mertensoid.herokuapp.com/")!
-    
+    let baseUrl = URL(string: Constants.serverURL)!
+    /// Инициализватор запроса на получение каталога
+    /// - Parameters:
+    ///   - errorParser: обработчик ошибок
+    ///   - sessionManager: экземпляр сессии для отправки запроса
+    ///   - queue: тип очереди для отправки запроса
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -25,6 +30,11 @@ class GetCatalog: AbstractRequestFactory {
 }
 
 extension GetCatalog: GetCatalogRequestFactory {
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func getCatalog(
         pageNumber: Int,
         idCategory: Int,

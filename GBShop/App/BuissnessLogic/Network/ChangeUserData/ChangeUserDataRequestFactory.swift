@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// Протокол, описывающий обязательные функции для отправки запроса на изменение параметров пользователя
 protocol ChangeUserDataRequestFactory {
     func changeUserData(
         id: Int,

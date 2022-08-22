@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Структура ответа на запрос выхода
 struct LogoutResult: Codable {
     let result: Int
 }

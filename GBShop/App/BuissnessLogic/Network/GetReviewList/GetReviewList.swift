@@ -1,21 +1,20 @@
 //
-//  Auth.swift
+//  GetReviewList.swift
 //  GBShop
 //
-//  Created by admin on 12.08.2022.
+//  Created by admin on 19.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-/// Запрос на логин
-class Auth: AbstractRequestFactory {
+/// Запрос на получение списка отзывов
+class GetReviewList: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    
-    /// Инициализватор запроса на логин
+    /// Инициализватор запроса на получение списка отзывов
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,43 +29,37 @@ class Auth: AbstractRequestFactory {
         }
 }
 
-extension Auth: AuthRequestFactory {
+extension GetReviewList: GetReviewListRequestFactory {
     /// Отправка запроса
     /// - Parameters:
     ///   - userName: имя пользователя
     ///   - password: пароль пользователя
     ///   - completionHandler: тип функции AF, выполняющей сам запрос
-    func login(
-        userName: String,
-        password: String,
-        completionHandler: @escaping
-        (AFDataResponse<LoginResult>) -> Void) {
-            let requestModel = Login(
+    func getReviewList(
+        productId: Int,
+        completionHandler: @escaping (AFDataResponse<GetReviewListResult>) -> Void) {
+            let requestModel = GetReviewList(
                 baseUrl: baseUrl,
-                login: userName,
-                password:
-                    password)
+                productId: productId
+            )
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-            
-        }
+    }
 }
 
-extension Auth {
-    /// Структура запроса логина
-    struct Login: RequestRouter {
+extension GetReviewList {
+    struct GetReviewList: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "login"
-        let login: String
-        let password: String
+        let path: String = "getReviewList"
+        let productId: Int
         var parameters: Parameters? {
             return [
-                "username": login,
-                "password": password
+                "id_product": productId
             ]
         }
     }
 }
+

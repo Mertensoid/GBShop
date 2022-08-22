@@ -8,11 +8,21 @@
 import Foundation
 import Alamofire
 
+/// Декодировщик ответа на запрос
 class CustomDecodableSerializer<T: Decodable>: DataResponseSerializerProtocol {
     private let errorParser: AbstractErrorParser
+    /// Иницицализатор декодировщика
+    /// - Parameter errorParser: обработчик ошибок
     init(errorParser: AbstractErrorParser) {
         self.errorParser = errorParser
     }
+    /// Декодирование ответа на запрос
+    /// - Parameters:
+    ///   - request: запрос
+    ///   - response: ответ на запрос
+    ///   - data: данные ответа
+    ///   - error: ошибка
+    /// - Returns: декодированные данные
     func serialize(
         request: URLRequest?,
         response: HTTPURLResponse?,
@@ -42,6 +52,7 @@ class CustomDecodableSerializer<T: Decodable>: DataResponseSerializerProtocol {
         }
 }
 
+/// Протокол, описывающий обязательные свойства и методы фабрики запросов
 protocol AbstractRequestFactory {
     var errorParser: AbstractErrorParser { get }
     var sessionManager: Session { get }
@@ -70,6 +81,12 @@ extension AbstractRequestFactory {
 extension DataRequest {
     
     @discardableResult
+    /// Декодирование ответа на запрос
+    /// - Parameters:
+    ///   - errorParser: обработчик ошибок
+    ///   - queue: очередь
+    ///   - completionHandler: тип функции AF для получения ответа на запрос
+    /// - Returns: декодированный ответ
     func responseCodable<T: Decodable>(
         errorParser: AbstractErrorParser,
         queue: DispatchQueue = .main,
