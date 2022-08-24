@@ -1,20 +1,20 @@
 //
-//  AddReview.swift
+//  DeleteFromBasket.swift
 //  GBShop
 //
-//  Created by admin on 19.08.2022.
+//  Created by admin on 22.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-/// Запрос на добавление нового отзыва
-class AddReview: AbstractRequestFactory {
+/// Запрос на удаление нового отзыва
+class DeleteFromBasket: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализатор запроса на добавление нового отзыва
+    /// Инициализатор запроса на удаление отзыва
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -29,15 +29,13 @@ class AddReview: AbstractRequestFactory {
         }
 }
 
-extension AddReview: AddReviewRequestFactory {
-    func addReview(
-        userId: Int,
-        text: String,
-        completionHandler: @escaping (AFDataResponse<AddReviewResult>) -> Void) {
-            let requestModel = AddReview(
+extension DeleteFromBasket: DeleteFromBasketRequestFactory {
+    func deleteFromBasket(
+        productId: Int,
+        completionHandler: @escaping (AFDataResponse<DeleteFromBasketResult>) -> Void) {
+            let requestModel = DeleteFromBasket(
                 baseUrl: baseUrl,
-                userId: userId,
-                text: text)
+                productId: productId)
             self.request(
                 request: requestModel,
                 completionHandler:
@@ -45,19 +43,16 @@ extension AddReview: AddReviewRequestFactory {
     }
 }
 
-extension AddReview {
-    struct AddReview: RequestRouter {
+extension DeleteFromBasket {
+    struct DeleteFromBasket: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "addReview"
-        let userId: Int
-        let text: String
+        let path: String = "deleteFromBasket"
+        let productId: Int
         var parameters: Parameters? {
             return [
-                "id_user": userId,
-                "text": text
+                "id_product": productId
             ]
         }
     }
 }
-

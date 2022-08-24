@@ -1,20 +1,20 @@
 //
-//  AddReview.swift
+//  PayBasket.swift
 //  GBShop
 //
-//  Created by admin on 19.08.2022.
+//  Created by admin on 22.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-/// Запрос на добавление нового отзыва
-class AddReview: AbstractRequestFactory {
+/// Запрос на удаление нового отзыва
+class PayBasket: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализатор запроса на добавление нового отзыва
+    /// Инициализатор запроса на удаление отзыва
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -29,35 +29,30 @@ class AddReview: AbstractRequestFactory {
         }
 }
 
-extension AddReview: AddReviewRequestFactory {
-    func addReview(
+extension PayBasket: PayBasketRequestFactory {
+    func payBasket(
         userId: Int,
-        text: String,
-        completionHandler: @escaping (AFDataResponse<AddReviewResult>) -> Void) {
-            let requestModel = AddReview(
+        completionHandler: @escaping (AFDataResponse<PayBasketResult>) -> Void) {
+            let requestModel = PayBasket(
                 baseUrl: baseUrl,
-                userId: userId,
-                text: text)
+                userId: userId)
             self.request(
                 request: requestModel,
                 completionHandler:
                     completionHandler)
-    }
+        }
 }
 
-extension AddReview {
-    struct AddReview: RequestRouter {
+extension PayBasket {
+    struct PayBasket: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "addReview"
+        let path: String = "payBasket"
         let userId: Int
-        let text: String
         var parameters: Parameters? {
             return [
-                "id_user": userId,
-                "text": text
+                "id_user": userId
             ]
         }
     }
 }
-

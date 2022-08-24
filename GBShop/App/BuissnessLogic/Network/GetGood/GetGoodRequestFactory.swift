@@ -10,6 +10,10 @@ import Alamofire
 
 /// Протокол, описывающий обязательные функции для отправки запроса на получение товара
 protocol GetGoodRequestFactory {
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - id: id товара
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func getGood(
         id: Int,
         completionHandler: @escaping

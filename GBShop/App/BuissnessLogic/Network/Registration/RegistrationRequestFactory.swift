@@ -10,6 +10,16 @@ import Alamofire
 
 /// Протокол, описывающий обязательные функции для отправки запроса на регистрацию
 protocol RegistrationRequestFactory {
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - id: id пользователя
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - email: email пользователя
+    ///   - gender: пол пользователя
+    ///   - creditCard: номер кредитной карты
+    ///   - biography: дополнительная информация о пользователе
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func registration(
         id: Int,
         userName: String,

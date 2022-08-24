@@ -14,7 +14,7 @@ class ChangeUserData: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на изменение параметров пользователя
+    /// Инициализатор запроса на изменение параметров пользователя
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class ChangeUserData: AbstractRequestFactory {
 }
 
 extension ChangeUserData: ChangeUserDataRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func changeUserData(
         id: Int,
         userName: String,

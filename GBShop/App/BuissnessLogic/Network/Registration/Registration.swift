@@ -14,7 +14,7 @@ class Registration: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на регистрацию
+    /// Инициализатор запроса на регистрацию
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class Registration: AbstractRequestFactory {
 }
 
 extension Registration: RegistrationRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func registration(
         id: Int,
         userName: String,
