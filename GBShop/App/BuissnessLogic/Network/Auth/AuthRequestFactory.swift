@@ -10,6 +10,11 @@ import Alamofire
 
 /// Протокол, описывающий обязательные функции для отправки запроса на логин
 protocol AuthRequestFactory {
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - userName: имя пользователя
+    ///   - password: пароль пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func login(
         userName: String,
         password: String,

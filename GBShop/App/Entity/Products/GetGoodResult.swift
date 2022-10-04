@@ -9,12 +9,15 @@ import Foundation
 
 /// Структура ответа на запрос получения товара
 struct GetGoodResult: Codable {
+    /// результат ответа на запрос (1/0)
     let result: Int
+    /// название товара
     let productName: String
+    /// цена товара
     let productPrice: Int
+    /// описание товара
     let productDescription: String
     
-    /// Согласование имен параметров при декодировании JSON'а из ответа
     enum CodingKeys: String, CodingKey {
         case result
         case productName = "product_name"

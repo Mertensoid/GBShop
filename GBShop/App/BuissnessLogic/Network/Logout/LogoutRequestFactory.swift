@@ -10,6 +10,11 @@ import Alamofire
 
 /// Протокол, описывающий обязательные функции для отправки запроса на выход
 protocol LogoutRequestFactory {
+    
+    /// Отправка запроса
+    /// - Parameters:
+    ///   - id: id пользователя
+    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func logout(
         id: Int,
         completionHandler: @escaping

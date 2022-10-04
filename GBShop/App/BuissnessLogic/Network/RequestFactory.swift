@@ -106,5 +106,32 @@ class RequestFactory {
             sessionManager: commonSession,
             queue: sessionQueue)
     }
+    /// Создание запроса на добавление товара в корзину
+    /// - Returns: запрос на добавление товара в корзину
+    func makeAddToBasketRequestFactory() -> AddToBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return AddToBasket(
+            errorParser: errorParser,
+            sessionManager: commonSession,
+            queue: sessionQueue)
+    }
+    /// Создание запроса на удаление товара из корзины
+    /// - Returns: запрос на удаление товара из корзины
+    func makeDeleteFromBasketRequestFactory() -> DeleteFromBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return DeleteFromBasket(
+            errorParser: errorParser,
+            sessionManager: commonSession,
+            queue: sessionQueue)
+    }
+    /// Создание запроса на оплату корзины
+    /// - Returns: запрос на оплату корзины
+    func makePayBasketRequestFactory() -> PayBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return PayBasket(
+            errorParser: errorParser,
+            sessionManager: commonSession,
+            queue: sessionQueue)
+    }
 }
 

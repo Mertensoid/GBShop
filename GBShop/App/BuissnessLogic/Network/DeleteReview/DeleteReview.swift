@@ -14,7 +14,7 @@ class DeleteReview: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на удаление отзыва
+    /// Инициализатор запроса на удаление отзыва
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class DeleteReview: AbstractRequestFactory {
 }
 
 extension DeleteReview: DeleteReviewRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func deleteReview(
         commentId: Int,
         completionHandler: @escaping (AFDataResponse<DeleteReviewResult>) -> Void) {

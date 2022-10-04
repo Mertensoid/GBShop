@@ -1,20 +1,20 @@
 //
-//  AddReview.swift
+//  AddToBasket.swift
 //  GBShop
 //
-//  Created by admin on 19.08.2022.
+//  Created by admin on 22.08.2022.
 //
 
 import Foundation
 import Alamofire
 
-/// Запрос на добавление нового отзыва
-class AddReview: AbstractRequestFactory {
+/// Запрос на добаление товара в корзину
+class AddToBasket: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализатор запроса на добавление нового отзыва
+    /// Инициализатор запроса на удаление отзыва
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -29,15 +29,15 @@ class AddReview: AbstractRequestFactory {
         }
 }
 
-extension AddReview: AddReviewRequestFactory {
-    func addReview(
-        userId: Int,
-        text: String,
-        completionHandler: @escaping (AFDataResponse<AddReviewResult>) -> Void) {
-            let requestModel = AddReview(
+extension AddToBasket: AddToBasketRequestFactory {
+    func addToBasket(
+        productId: Int,
+        quantity: Int,
+        completionHandler: @escaping (AFDataResponse<AddToBasketResult>) -> Void) {
+            let requestModel = AddToBasket(
                 baseUrl: baseUrl,
-                userId: userId,
-                text: text)
+                productId: productId,
+                quantity: quantity)
             self.request(
                 request: requestModel,
                 completionHandler:
@@ -45,19 +45,18 @@ extension AddReview: AddReviewRequestFactory {
     }
 }
 
-extension AddReview {
-    struct AddReview: RequestRouter {
+extension AddToBasket {
+    struct AddToBasket: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "addReview"
-        let userId: Int
-        let text: String
+        let path: String = "addToBasket"
+        let productId: Int
+        let quantity: Int
         var parameters: Parameters? {
             return [
-                "id_user": userId,
-                "text": text
+                "id_product": productId,
+                "quantity": quantity
             ]
         }
     }
 }
-

@@ -14,7 +14,7 @@ class GetReviewList: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на получение списка отзывов
+    /// Инициализатор запроса на получение списка отзывов
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class GetReviewList: AbstractRequestFactory {
 }
 
 extension GetReviewList: GetReviewListRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func getReviewList(
         productId: Int,
         completionHandler: @escaping (AFDataResponse<GetReviewListResult>) -> Void) {

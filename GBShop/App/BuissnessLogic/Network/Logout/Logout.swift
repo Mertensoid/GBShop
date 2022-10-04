@@ -14,7 +14,7 @@ class Logout: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на выход
+    /// Инициализатор запроса на выход
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class Logout: AbstractRequestFactory {
 }
 
 extension Logout: LogoutRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func logout(
         id: Int,
         completionHandler: @escaping (AFDataResponse<LogoutResult>) -> Void) {

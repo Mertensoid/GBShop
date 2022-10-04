@@ -14,7 +14,7 @@ class GetCatalog: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
-    /// Инициализватор запроса на получение каталога
+    /// Инициализатор запроса на получение каталога
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -30,11 +30,6 @@ class GetCatalog: AbstractRequestFactory {
 }
 
 extension GetCatalog: GetCatalogRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func getCatalog(
         pageNumber: Int,
         idCategory: Int,

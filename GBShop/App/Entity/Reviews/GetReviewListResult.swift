@@ -9,10 +9,11 @@ import Foundation
 
 /// Структура ответа на запрос получения списка отзывов
 struct GetReviewListResult: Codable {
+    /// id товара
     let productId: Int
+    /// массив отзывов о товаре
     let reviews: [Review]
     
-    /// Согласование имен параметров при декодировании JSON'а из ответа
     enum CodingKeys: String, CodingKey {
         case productId = "product_id"
         case reviews

@@ -15,7 +15,7 @@ class Auth: AbstractRequestFactory {
     let queue: DispatchQueue
     let baseUrl = URL(string: Constants.serverURL)!
     
-    /// Инициализватор запроса на логин
+    /// Инициализатор запроса на логин
     /// - Parameters:
     ///   - errorParser: обработчик ошибок
     ///   - sessionManager: экземпляр сессии для отправки запроса
@@ -31,11 +31,6 @@ class Auth: AbstractRequestFactory {
 }
 
 extension Auth: AuthRequestFactory {
-    /// Отправка запроса
-    /// - Parameters:
-    ///   - userName: имя пользователя
-    ///   - password: пароль пользователя
-    ///   - completionHandler: тип функции AF, выполняющей сам запрос
     func login(
         userName: String,
         password: String,
