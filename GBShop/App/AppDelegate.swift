@@ -9,12 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     let requestFactory = RequestFactory()
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            
             let auth = requestFactory.makeAuthRequestFactory()
             auth.login(userName: "Somebody", password: "mypassword") { response in
                 switch response.result {
@@ -144,6 +145,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             return true
         }
-
 }
 
