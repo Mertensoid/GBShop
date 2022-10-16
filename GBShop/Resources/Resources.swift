@@ -32,5 +32,19 @@ enum Resources {
             return UIFont(name: "Helvetica-Bold", size: fontSize) ?? UIFont()
         }
     }
+    
+    enum Strings {
+        enum TabBarHeaders {
+            static var catalog = "Каталог"
+            static var basket = "Корзина"
+            static var settings = "Настройки"
+        }
+        enum TabBarIconsNames {
+            static var catalog = "list.bullet.rectangle"
+            static var basket = "basket"
+            static var settings = "gearshape.2"
+        }
+    }
+    
 }
 

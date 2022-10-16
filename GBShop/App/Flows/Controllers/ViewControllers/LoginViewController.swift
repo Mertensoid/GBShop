@@ -99,8 +99,8 @@ extension LoginViewController {
 @objc extension LoginViewController {
     func joinButtonPressed() {
         print("Join button pressed")
-//        let tabVC = UITabBarController()
-//        navigationController?.pushViewController(tabVC, animated: true)
+        let tabVC = TabBarController()
+        navigationController?.pushViewController(tabVC, animated: true)
     }
     func registrationButtonPressed() {
         print("Registration button pressed")
