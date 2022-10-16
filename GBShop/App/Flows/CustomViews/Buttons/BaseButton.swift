@@ -27,6 +27,8 @@ class BaseButton: UIButton {
     func setTitle(_ title: String) {
         label.text = title
     }
+    
+    
 }
 
 @objc extension BaseButton {

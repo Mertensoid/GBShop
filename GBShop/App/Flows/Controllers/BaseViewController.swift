@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseController: UIViewController {
+class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class BaseController: UIViewController {
     }
 }
 
-@objc extension BaseController {
+@objc extension BaseViewController {
     func addViews() {}
     func layoutViews() {}
     func configure() {

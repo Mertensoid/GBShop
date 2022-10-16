@@ -39,11 +39,13 @@ extension CancelButton {
     
     override func configure() {
         super.configure()
-        label.textColor = Resources.Colors.black
+        label.textColor = Resources.Colors.darkRed
         label.font = Resources.Fonts.helveticaBold(with: 20)
         self.layer.cornerRadius = 30
         self.layer.borderWidth = 3
         self.layer.borderColor = Resources.Colors.darkRed.cgColor
         self.backgroundColor = Resources.Colors.white
+        self.setOpacity()
+        self.makeTapWithButtonShadow(self)
     }
 }

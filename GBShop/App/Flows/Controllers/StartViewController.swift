@@ -7,9 +7,8 @@
 
 import UIKit
 
-final class StartViewController: BaseController {
-    
-    
+final class StartViewController: BaseViewController {
+
     private let logoImageView = UIImageView()
     private let logoTextView = UIImageView()
     private let startButton = ApplyButton()
@@ -60,15 +59,22 @@ extension StartViewController {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "logo_picture_vector")
         
-        
         logoTextView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.contentMode = .scaleAspectFit
         logoTextView.image = UIImage(named: "logo_words_vector")
         
-        
         startButton.translatesAutoresizingMaskIntoConstraints = false
         startButton.setTitle("Каталог")
-        
+        startButton.addTarget(
+            self,
+            action: #selector(startButtonPressed),
+            for: .touchUpInside)
     }
-    
+}
+
+@objc extension StartViewController {
+    func startButtonPressed() {
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
+    }
 }

@@ -42,6 +42,17 @@ extension ClearButton {
         label.textColor = Resources.Colors.darkRed
         label.font = Resources.Fonts.helveticaRegular(with: 16)
         self.layer.cornerRadius = 15
+        self.makeTapWithButtonShadow(self)
         
+    }
+    @objc override func handleIn() {
+        UIView.animate(withDuration: 0.1) {
+            self.label.alpha = 0.55
+        }
+    }
+    @objc override func handleOut() {
+        UIView.animate(withDuration: 0.1) {
+            self.label.alpha = 1
+        }
     }
 }

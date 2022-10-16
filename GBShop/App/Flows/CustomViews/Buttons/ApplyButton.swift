@@ -43,5 +43,7 @@ extension ApplyButton {
         label.font = Resources.Fonts.helveticaBold(with: 20)
         self.layer.cornerRadius = 30
         self.backgroundColor = Resources.Colors.darkRed
+        self.setOpacity()
+        self.makeTapWithButtonShadow(self)
     }
 }

@@ -10,12 +10,15 @@
 		0C75AACBD1B44335CE618CAB /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD1ABFD19820B112470ECE /* Pods_GBShop.framework */; };
 		1F4C6181F3CB090DE0013352 /* Pods_GBShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F53346A5B13D4B41BF41B75 /* Pods_GBShopTests.framework */; };
 		72442811592C6B05FE63905A /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC949B2DEBFEDD30974D557 /* Pods_GBShop_GBShopUITests.framework */; };
+		842444C828FBBFB200F70154 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444C728FBBFB200F70154 /* RegistrationViewController.swift */; };
+		842444CB28FBC2E300F70154 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444CA28FBC2E300F70154 /* BaseTextField.swift */; };
+		842444CD28FBDDE700F70154 /* BaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */; };
 		84567C3A28FAA81500B7E9B3 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3928FAA81500B7E9B3 /* UIView + ext.swift */; };
-		84567C3C28FAA94C00B7E9B3 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3B28FAA94C00B7E9B3 /* BaseController.swift */; };
+		84567C3C28FAA94C00B7E9B3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */; };
 		84567C3E28FAAD1900B7E9B3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3D28FAAD1900B7E9B3 /* BaseView.swift */; };
-		84567C4628FAECAA00B7E9B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginController.swift */; };
-		84567C4728FAECAA00B7E9B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginController.swift */; };
-		84567C4828FAECAA00B7E9B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginController.swift */; };
+		84567C4628FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
+		84567C4728FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
+		84567C4828FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
 		84567C4A28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
 		84567C4B28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
 		84567C4C28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
@@ -25,9 +28,6 @@
 		84567C5428FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
 		84567C5528FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
 		84567C5628FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
-		84567C5828FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5728FB0D5B00B7E9B3 /* PaddedTextField.swift */; };
-		84567C5928FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5728FB0D5B00B7E9B3 /* PaddedTextField.swift */; };
-		84567C5A28FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5728FB0D5B00B7E9B3 /* PaddedTextField.swift */; };
 		8465BEEE28B386A1005431B6 /* AddToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEED28B386A1005431B6 /* AddToBasket.swift */; };
 		8465BEF028B386D4005431B6 /* AddToBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEEF28B386D4005431B6 /* AddToBasketRequestFactory.swift */; };
 		8465BEF228B386E7005431B6 /* DeleteFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEF128B386E7005431B6 /* DeleteFromBasket.swift */; };
@@ -73,6 +73,7 @@
 		8499CEAA28A91D5D008A8CA2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA928A91D5D008A8CA2 /* Product.swift */; };
 		8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */; };
 		8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */; };
+		84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EA28FC448600EC791E /* UIButton + ext.swift */; };
 		84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */; };
 		84DAA7E928F9727300D638B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E828F9727300D638B8 /* StartViewController.swift */; };
 		84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */; };
@@ -115,14 +116,16 @@
 		43788DFF647A00F8F752894D /* Pods-GBShop-GBShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.release.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52F39B88CCFF43B9FF90693F /* Pods-GBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop.release.xcconfig"; path = "Target Support Files/Pods-GBShop/Pods-GBShop.release.xcconfig"; sourceTree = "<group>"; };
 		7BC949B2DEBFEDD30974D557 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842444C728FBBFB200F70154 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		842444CA28FBC2E300F70154 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollViewController.swift; sourceTree = "<group>"; };
 		84567C3928FAA81500B7E9B3 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
-		84567C3B28FAA94C00B7E9B3 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		84567C3D28FAAD1900B7E9B3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		84567C4528FAECAA00B7E9B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
 		84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		84567C5328FAFD7300B7E9B3 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
-		84567C5728FB0D5B00B7E9B3 /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		8465BEED28B386A1005431B6 /* AddToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasket.swift; sourceTree = "<group>"; };
 		8465BEEF28B386D4005431B6 /* AddToBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketRequestFactory.swift; sourceTree = "<group>"; };
 		8465BEF128B386E7005431B6 /* DeleteFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasket.swift; sourceTree = "<group>"; };
@@ -172,6 +175,7 @@
 		8499CEA928A91D5D008A8CA2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryTests.swift; sourceTree = "<group>"; };
 		8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryStub.swift; sourceTree = "<group>"; };
+		84AC89EA28FC448600EC791E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84DAA7E828F9727300D638B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
@@ -244,12 +248,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		842444C928FBC2C300F70154 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				842444CA28FBC2E300F70154 /* BaseTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
 		84567C3728FA969E00B7E9B3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */,
+				842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */,
 				84DAA7E828F9727300D638B8 /* StartViewController.swift */,
-				84567C3B28FAA94C00B7E9B3 /* BaseController.swift */,
-				84567C4528FAECAA00B7E9B3 /* LoginController.swift */,
+				84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */,
+				842444C728FBBFB200F70154 /* RegistrationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -538,9 +552,9 @@
 		84DAA7EA28F98AB900D638B8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				842444C928FBC2C300F70154 /* TextFields */,
 				84567C4D28FAFCAD00B7E9B3 /* Buttons */,
 				84567C3D28FAAD1900B7E9B3 /* BaseView.swift */,
-				84567C5728FB0D5B00B7E9B3 /* PaddedTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -550,6 +564,7 @@
 			children = (
 				84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */,
 				84567C3928FAA81500B7E9B3 /* UIView + ext.swift */,
+				84AC89EA28FC448600EC791E /* UIButton + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -884,12 +899,14 @@
 				8465BEF828B3871F005431B6 /* PayBasketRequestFactory.swift in Sources */,
 				84567C4A28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 				84F85EA428AF4FD40039E8BC /* AddReviewRequestFactory.swift in Sources */,
+				84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */,
+				842444CD28FBDDE700F70154 /* BaseScrollViewController.swift in Sources */,
 				8465BEEE28B386A1005431B6 /* AddToBasket.swift in Sources */,
 				84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */,
 				8499CEA428A8FB9D008A8CA2 /* GetCatalogRequestFactory.swift in Sources */,
 				8499CE6928A145DD008A8CA2 /* ErrorParser.swift in Sources */,
 				8499CE6728A141D5008A8CA2 /* AbstractErrorParser.swift in Sources */,
-				84567C3C28FAA94C00B7E9B3 /* BaseController.swift in Sources */,
+				84567C3C28FAA94C00B7E9B3 /* BaseViewController.swift in Sources */,
 				8499CE6B28A147A5008A8CA2 /* DataRequest.swift in Sources */,
 				84F85EA828AF51190039E8BC /* GetReviewListResult.swift in Sources */,
 				8499CEA028A8FB70008A8CA2 /* GetGoodRequestFactory.swift in Sources */,
@@ -912,15 +929,16 @@
 				8499CE8A28A76481008A8CA2 /* RegistrationResult.swift in Sources */,
 				8499CE7128A14CD9008A8CA2 /* User.swift in Sources */,
 				84F85EA628AF51080039E8BC /* AddReviewResult.swift in Sources */,
-				84567C5828FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */,
-				84567C4628FAECAA00B7E9B3 /* LoginController.swift in Sources */,
+				84567C4628FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84F85EAC28AF730C0039E8BC /* Review.swift in Sources */,
 				8465BEFE28B388F0005431B6 /* DeleteFromBasketResult.swift in Sources */,
 				84567C5428FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
 				84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */,
 				8499CE7828A61316008A8CA2 /* Auth.swift in Sources */,
+				842444CB28FBC2E300F70154 /* BaseTextField.swift in Sources */,
 				84F85EA228AF4FBC0039E8BC /* AddReview.swift in Sources */,
 				8499CEA628A8FCA4008A8CA2 /* GetGoodResult.swift in Sources */,
+				842444C828FBBFB200F70154 /* RegistrationViewController.swift in Sources */,
 				84567C5028FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */,
 				8499CE8D28A771BA008A8CA2 /* ChangeUserData.swift in Sources */,
@@ -933,7 +951,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84567C5928FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */,
 				8499CE9328A78E46008A8CA2 /* ResponseCodableTests.swift in Sources */,
 				8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */,
 				8499CE9528A78F31008A8CA2 /* PostStub.swift in Sources */,
@@ -941,7 +958,7 @@
 				8499CE9A28A78F87008A8CA2 /* ErrorParserStub.swift in Sources */,
 				8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */,
 				84567C5528FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
-				84567C4728FAECAA00B7E9B3 /* LoginController.swift in Sources */,
+				84567C4728FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84567C5128FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				84567C4B28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 			);
@@ -952,11 +969,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8499CE4E289FE5B4008A8CA2 /* GBShopUITests.swift in Sources */,
-				84567C4828FAECAA00B7E9B3 /* LoginController.swift in Sources */,
+				84567C4828FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84567C5228FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				8499CE50289FE5B4008A8CA2 /* GBShopUITestsLaunchTests.swift in Sources */,
 				84567C5628FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
-				84567C5A28FB0D5B00B7E9B3 /* PaddedTextField.swift in Sources */,
 				84567C4C28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
