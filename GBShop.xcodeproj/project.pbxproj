@@ -76,6 +76,7 @@
 		849C1E6728FC869700BA8C9F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C1E6628FC869700BA8C9F /* SettingsViewController.swift */; };
 		84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EA28FC448600EC791E /* UIButton + ext.swift */; };
 		84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EE28FC612200EC791E /* TabBarController.swift */; };
+		84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFD8F2901075F00FBF068 /* SettingsCell.swift */; };
 		84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */; };
 		84DAA7E928F9727300D638B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E828F9727300D638B8 /* StartViewController.swift */; };
 		84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */; };
@@ -180,6 +181,7 @@
 		849C1E6628FC869700BA8C9F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84AC89EA28FC448600EC791E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		84AC89EE28FC612200EC791E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		84ADFD8F2901075F00FBF068 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84DAA7E828F9727300D638B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
@@ -579,9 +581,18 @@
 			path = FunctionalControllers;
 			sourceTree = "<group>";
 		};
+		84ADFD8E290106DA00FBF068 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFD8F2901075F00FBF068 /* SettingsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84DAA7EA28F98AB900D638B8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				84ADFD8E290106DA00FBF068 /* Cells */,
 				842444C928FBC2C300F70154 /* TextFields */,
 				84567C4D28FAFCAD00B7E9B3 /* Buttons */,
 				84567C3D28FAAD1900B7E9B3 /* BaseView.swift */,
@@ -916,6 +927,7 @@
 				8499CE7F28A75D12008A8CA2 /* LogoutRequestFactory.swift in Sources */,
 				84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */,
 				8499CE6F28A14CCB008A8CA2 /* LoginResult.swift in Sources */,
+				84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */,
 				8499CE8528A76416008A8CA2 /* Registration.swift in Sources */,
 				8499CE7C28A75C8E008A8CA2 /* LogoutResult.swift in Sources */,
 				8499CE2D289FE5B3008A8CA2 /* AppDelegate.swift in Sources */,

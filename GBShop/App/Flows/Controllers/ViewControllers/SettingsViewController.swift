@@ -10,8 +10,9 @@ import UIKit
 final class SettingsViewController: BaseScrollViewController, UITableViewDelegate, UITableViewDataSource {
     
     let headerLabel = UILabel()
+    let tableView = UITableView()
+    var rowHeight = 110
     
-    let tableView = UITableView()//(frame: CGRect(x: 0, y: 0, width: 100, height: 500))
     let numberOfSections = 2
     let numberOfRowsInFirstSection = 5
     let numberOfRowsInSecondSection = 3
@@ -21,6 +22,7 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(SettingsCell.self, forCellReuseIdentifier: "Cell")
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -57,38 +59,42 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
         return CGFloat(tableHeaderHeight)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingsCell
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "Имя"
+                cell.setTitle("Имя")
             case 1:
-                cell.textLabel?.text = "Фамилия"
+                cell.setTitle("Фамилия")
             case 2:
-                cell.textLabel?.text = "E-mail"
+                cell.setTitle("E-mail")
             case 3:
-                cell.textLabel?.text = "Дата рождения"
+                cell.setTitle("Дата рождения")
             case 4:
-                cell.textLabel?.text = "Должность"
+                cell.setTitle("Должность")
             default:
                 break
             }
         case 1:
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "Реклама"
+                cell.setTitle("Реклама")
             case 1:
-                cell.textLabel?.text = "Тема"
+                cell.setTitle("Тема")
             case 2:
-                cell.textLabel?.text = "Помощь"
+                cell.setTitle("Помощь")
             default:
                 break
             }
         default:
             break
         }
+        rowHeight = Int(cell.contentView.frame.height)
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(rowHeight)
     }
 }
 
@@ -109,7 +115,7 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
             tableView.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
-            tableView.heightAnchor.constraint(equalToConstant: view.frame.height - 90 - headerLabel.frame.height)
+            tableView.heightAnchor.constraint(equalToConstant: view.frame.height - 110 - headerLabel.frame.height)
         ])
     }
     override func configure() {
@@ -121,5 +127,7 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.headerView(forSection: 0)?.textLabel?.font = Resources.Fonts.helveticaBold(with: 20)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 110
     }
 }
