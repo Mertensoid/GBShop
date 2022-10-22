@@ -7,94 +7,34 @@
 
 import UIKit
 
-final class SettingsViewController: BaseScrollViewController, UITableViewDelegate, UITableViewDataSource {
+final class SettingsViewController: BaseScrollViewController {
     
     let headerLabel = UILabel()
-    let tableView = UITableView()
-    var rowHeight = 110
+    let nameLabel = UILabel()
+    let nameTextField = SmallTextField()
+
+    let surnameLabel = UILabel()
+    let surnameTextField = SmallTextField()
+
+    let emailLabel = UILabel()
+    let emailTextField = SmallTextField()
+
+    let dateLabel = UILabel()
+    let dateTextField = SmallTextField()
+
+    let postLabel = UILabel()
+    let postTextField = SmallTextField()
     
-    let numberOfSections = 2
-    let numberOfRowsInFirstSection = 5
-    let numberOfRowsInSecondSection = 3
-    let tableHeaderHeight = 40
-    let firstSectionHeaderTitle = "Пользователь"
-    let secondSectionHeaderTitle = "Приложение"
+    let saveButton = ApplyButton()
+    
+    let verticalGap:CGFloat = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(SettingsCell.self, forCellReuseIdentifier: "Cell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         
         addViews()
         layoutViews()
         configure()
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfSections
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return numberOfRowsInFirstSection
-        case 1:
-            return numberOfRowsInSecondSection
-        default:
-            return 0
-        }
-    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return firstSectionHeaderTitle
-        case 1:
-            return secondSectionHeaderTitle
-        default:
-            return ""
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(tableHeaderHeight)
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SettingsCell
-        switch indexPath.section {
-        case 0:
-            switch indexPath.row {
-            case 0:
-                cell.setTitle("Имя")
-            case 1:
-                cell.setTitle("Фамилия")
-            case 2:
-                cell.setTitle("E-mail")
-            case 3:
-                cell.setTitle("Дата рождения")
-            case 4:
-                cell.setTitle("Должность")
-            default:
-                break
-            }
-        case 1:
-            switch indexPath.row {
-            case 0:
-                cell.setTitle("Реклама")
-            case 1:
-                cell.setTitle("Тема")
-            case 2:
-                cell.setTitle("Помощь")
-            default:
-                break
-            }
-        default:
-            break
-        }
-        rowHeight = Int(cell.contentView.frame.height)
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(rowHeight)
     }
 }
 
@@ -102,7 +42,23 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
     override func addViews() {
         super.addViews()
         view.addSubview(headerLabel)
-        view.addSubview(tableView)
+
+        view.addSubview(nameLabel)
+        view.addSubview(nameTextField)
+
+        view.addSubview(surnameLabel)
+        view.addSubview(surnameTextField)
+
+        view.addSubview(emailLabel)
+        view.addSubview(emailTextField)
+
+        view.addSubview(dateLabel)
+        view.addSubview(dateTextField)
+
+        view.addSubview(postLabel)
+        view.addSubview(postTextField)
+        
+        view.addSubview(saveButton)
     }
     override func layoutViews() {
         super.layoutViews()
@@ -111,11 +67,44 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
             headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             headerLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
             
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
-            tableView.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
-            tableView.heightAnchor.constraint(equalToConstant: view.frame.height - 110 - headerLabel.frame.height)
+            nameLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: verticalGap),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: verticalGap),
+            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            surnameLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: verticalGap),
+            surnameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            surnameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            surnameTextField.topAnchor.constraint(equalTo: surnameLabel.bottomAnchor, constant: verticalGap),
+            surnameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            surnameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            emailLabel.topAnchor.constraint(equalTo: surnameTextField.bottomAnchor, constant: verticalGap),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emailLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: verticalGap),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            dateLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: verticalGap),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            dateTextField.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: verticalGap),
+            dateTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            dateTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            postLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: verticalGap),
+            postLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            postLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            postTextField.topAnchor.constraint(equalTo: postLabel.bottomAnchor, constant: verticalGap),
+            postTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            postTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            saveButton.topAnchor.constraint(equalTo: postTextField.bottomAnchor, constant: verticalGap),
+            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     override func configure() {
@@ -124,10 +113,30 @@ final class SettingsViewController: BaseScrollViewController, UITableViewDelegat
         headerLabel.text = "Настройки"
         headerLabel.font = Resources.Fonts.helveticaRegular(with: 30)
         headerLabel.textAlignment = .center
+
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.text = "Имя"
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.headerView(forSection: 0)?.textLabel?.font = Resources.Fonts.helveticaBold(with: 20)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 110
+        nameTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        surnameLabel.translatesAutoresizingMaskIntoConstraints = false
+        surnameLabel.text = "Фамилия"
+        
+        surnameTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailLabel.text = "E-mail"
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.text = "Дата рождения"
+        dateTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        postLabel.translatesAutoresizingMaskIntoConstraints = false
+        postLabel.text = "Должность"
+        postTextField.translatesAutoresizingMaskIntoConstraints = false
+
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.setTitle("Сохранить")
     }
 }

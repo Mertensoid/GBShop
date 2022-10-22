@@ -79,14 +79,14 @@ class BaseScrollViewController: UIViewController {
                 .priority = .defaultHigh
             self.view.layoutIfNeeded()
         }
-        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
     }
 
     //Когда клавиатура исчезает
     func keyboardWillBeHidden(notification: Notification) {
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInsets
+        self.scrollView.contentInset = contentInsets
         UIView.animate(withDuration: 1) {
             self.scrollView.constraints
                 .first(where: { $0.identifier == "keyboardShown" })?
@@ -99,6 +99,6 @@ class BaseScrollViewController: UIViewController {
     }
 
     func hideKeyboard() {
-        self.scrollView.endEditing(true)
+        view.endEditing(true)
     }
 }
