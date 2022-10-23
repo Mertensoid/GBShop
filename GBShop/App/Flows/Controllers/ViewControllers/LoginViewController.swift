@@ -18,10 +18,15 @@ final class LoginViewController: BaseScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Вход"
+        navigationItem.titleView?.tintColor = .white
         addViews()
         layoutViews()
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
 }
 
@@ -70,7 +75,7 @@ extension LoginViewController {
     }
     override func configure() {
         super.configure()
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.isHidden = false
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.text = "Вход"

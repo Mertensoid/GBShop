@@ -19,7 +19,7 @@ final class RegistrationViewController: BaseScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Регистрация"
         addViews()
         layoutViews()
         configure()
@@ -74,7 +74,6 @@ extension RegistrationViewController {
     
     override func configure() {
         super.configure()
-        self.navigationController?.isNavigationBarHidden = true
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.text = "Регистрация"

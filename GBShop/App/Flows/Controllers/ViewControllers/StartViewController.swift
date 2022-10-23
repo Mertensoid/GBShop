@@ -15,10 +15,15 @@ final class StartViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Выход"
+        let backButton = UIBarButtonItem()
+        navigationItem.backBarButtonItem = backButton
         addViews()
         layoutViews()
         configure()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
 
@@ -56,6 +61,7 @@ extension StartViewController {
     }
     override func configure() {
         super.configure()
+        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "logo_picture_vector")
         

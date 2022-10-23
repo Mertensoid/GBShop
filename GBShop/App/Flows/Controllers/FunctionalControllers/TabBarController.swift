@@ -12,8 +12,8 @@ enum Tabs: Int {
     case basket
     case settings
 }
+
 class TabBarController: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let catalogController = CatalogTableViewController()
+        let catalogController = CatalogViewController()
         let basketController = UIViewController()
         let settingsController = SettingsViewController()
         

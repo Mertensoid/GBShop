@@ -83,9 +83,10 @@
 		84DAA7EF28F98C3500D638B8 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EE28F98C3500D638B8 /* Resources.swift */; };
 		84DAA7F228F98DA300D638B8 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */; };
 		84EA67862902DE4800632F2D /* SmallTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA67852902DE4800632F2D /* SmallTextField.swift */; };
-		84EA67882902E37200632F2D /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA67872902E37200632F2D /* CatalogTableViewController.swift */; };
 		84EA678A2902E3CB00632F2D /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA67892902E3CB00632F2D /* CatalogCell.swift */; };
 		84EA678D2903134B00632F2D /* TestCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA678C2903134B00632F2D /* TestCatalog.swift */; };
+		84EA678F2905179F00632F2D /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA678E2905179F00632F2D /* ProductViewController.swift */; };
+		84EA679329057FD100632F2D /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA679229057FD100632F2D /* CatalogViewController.swift */; };
 		84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9928AF4F620039E8BC /* DeleteReview.swift */; };
 		84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */; };
 		84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9D28AF4F910039E8BC /* GetReviewList.swift */; };
@@ -192,9 +193,10 @@
 		84DAA7EE28F98C3500D638B8 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		84EA67852902DE4800632F2D /* SmallTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTextField.swift; sourceTree = "<group>"; };
-		84EA67872902E37200632F2D /* CatalogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewController.swift; sourceTree = "<group>"; };
 		84EA67892902E3CB00632F2D /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		84EA678C2903134B00632F2D /* TestCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCatalog.swift; sourceTree = "<group>"; };
+		84EA678E2905179F00632F2D /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		84EA679229057FD100632F2D /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		84F85E9928AF4F620039E8BC /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReviewRequestFactory.swift; sourceTree = "<group>"; };
 		84F85E9D28AF4F910039E8BC /* GetReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewList.swift; sourceTree = "<group>"; };
@@ -579,7 +581,8 @@
 				84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */,
 				842444C728FBBFB200F70154 /* RegistrationViewController.swift */,
 				849C1E6628FC869700BA8C9F /* SettingsViewController.swift */,
-				84EA67872902E37200632F2D /* CatalogTableViewController.swift */,
+				84EA678E2905179F00632F2D /* ProductViewController.swift */,
+				84EA679229057FD100632F2D /* CatalogViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -967,6 +970,7 @@
 				842444CD28FBDDE700F70154 /* BaseScrollViewController.swift in Sources */,
 				8465BEEE28B386A1005431B6 /* AddToBasket.swift in Sources */,
 				84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */,
+				84EA679329057FD100632F2D /* CatalogViewController.swift in Sources */,
 				8499CEA428A8FB9D008A8CA2 /* GetCatalogRequestFactory.swift in Sources */,
 				8499CE6928A145DD008A8CA2 /* ErrorParser.swift in Sources */,
 				8499CE6728A141D5008A8CA2 /* AbstractErrorParser.swift in Sources */,
@@ -981,6 +985,7 @@
 				8499CE7A28A613FF008A8CA2 /* RequestFactory.swift in Sources */,
 				8499CE9128A771F4008A8CA2 /* ChangeUserDataResult.swift in Sources */,
 				8499CEA828A91CF8008A8CA2 /* GetCatalogResult.swift in Sources */,
+				84EA678F2905179F00632F2D /* ProductViewController.swift in Sources */,
 				8465BEF028B386D4005431B6 /* AddToBasketRequestFactory.swift in Sources */,
 				84EA678A2902E3CB00632F2D /* CatalogCell.swift in Sources */,
 				84567C3E28FAAD1900B7E9B3 /* BaseView.swift in Sources */,
@@ -988,7 +993,6 @@
 				84DAA7EF28F98C3500D638B8 /* Resources.swift in Sources */,
 				84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */,
 				8465BEF428B386F7005431B6 /* DeleteFromBasketRequestFactory.swift in Sources */,
-				84EA67882902E37200632F2D /* CatalogTableViewController.swift in Sources */,
 				8499CE9E28A8FB4B008A8CA2 /* GetGood.swift in Sources */,
 				8499CE7428A612BE008A8CA2 /* AuthRequestFactory.swift in Sources */,
 				84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */,
