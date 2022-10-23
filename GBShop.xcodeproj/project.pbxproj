@@ -10,6 +10,24 @@
 		0C75AACBD1B44335CE618CAB /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD1ABFD19820B112470ECE /* Pods_GBShop.framework */; };
 		1F4C6181F3CB090DE0013352 /* Pods_GBShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F53346A5B13D4B41BF41B75 /* Pods_GBShopTests.framework */; };
 		72442811592C6B05FE63905A /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC949B2DEBFEDD30974D557 /* Pods_GBShop_GBShopUITests.framework */; };
+		842444C828FBBFB200F70154 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444C728FBBFB200F70154 /* RegistrationViewController.swift */; };
+		842444CB28FBC2E300F70154 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444CA28FBC2E300F70154 /* BaseTextField.swift */; };
+		842444CD28FBDDE700F70154 /* BaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */; };
+		84567C3A28FAA81500B7E9B3 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3928FAA81500B7E9B3 /* UIView + ext.swift */; };
+		84567C3C28FAA94C00B7E9B3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */; };
+		84567C3E28FAAD1900B7E9B3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C3D28FAAD1900B7E9B3 /* BaseView.swift */; };
+		84567C4628FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
+		84567C4728FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
+		84567C4828FAECAA00B7E9B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */; };
+		84567C4A28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
+		84567C4B28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
+		84567C4C28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */; };
+		84567C5028FAFCE000B7E9B3 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */; };
+		84567C5128FAFCE000B7E9B3 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */; };
+		84567C5228FAFCE000B7E9B3 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */; };
+		84567C5428FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
+		84567C5528FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
+		84567C5628FAFD7300B7E9B3 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84567C5328FAFD7300B7E9B3 /* BaseButton.swift */; };
 		8465BEEE28B386A1005431B6 /* AddToBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEED28B386A1005431B6 /* AddToBasket.swift */; };
 		8465BEF028B386D4005431B6 /* AddToBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEEF28B386D4005431B6 /* AddToBasketRequestFactory.swift */; };
 		8465BEF228B386E7005431B6 /* DeleteFromBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465BEF128B386E7005431B6 /* DeleteFromBasket.swift */; };
@@ -55,6 +73,15 @@
 		8499CEAA28A91D5D008A8CA2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEA928A91D5D008A8CA2 /* Product.swift */; };
 		8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */; };
 		8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */; };
+		849C1E6728FC869700BA8C9F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C1E6628FC869700BA8C9F /* SettingsViewController.swift */; };
+		84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EA28FC448600EC791E /* UIButton + ext.swift */; };
+		84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EE28FC612200EC791E /* TabBarController.swift */; };
+		84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFD8F2901075F00FBF068 /* SettingsCell.swift */; };
+		84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */; };
+		84DAA7E928F9727300D638B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E828F9727300D638B8 /* StartViewController.swift */; };
+		84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */; };
+		84DAA7EF28F98C3500D638B8 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EE28F98C3500D638B8 /* Resources.swift */; };
+		84DAA7F228F98DA300D638B8 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */; };
 		84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9928AF4F620039E8BC /* DeleteReview.swift */; };
 		84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */; };
 		84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85E9D28AF4F910039E8BC /* GetReviewList.swift */; };
@@ -92,6 +119,16 @@
 		43788DFF647A00F8F752894D /* Pods-GBShop-GBShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop-GBShopUITests.release.xcconfig"; path = "Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52F39B88CCFF43B9FF90693F /* Pods-GBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop.release.xcconfig"; path = "Target Support Files/Pods-GBShop/Pods-GBShop.release.xcconfig"; sourceTree = "<group>"; };
 		7BC949B2DEBFEDD30974D557 /* Pods_GBShop_GBShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShop_GBShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842444C728FBBFB200F70154 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		842444CA28FBC2E300F70154 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollViewController.swift; sourceTree = "<group>"; };
+		84567C3928FAA81500B7E9B3 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
+		84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		84567C3D28FAAD1900B7E9B3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		84567C5328FAFD7300B7E9B3 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		8465BEED28B386A1005431B6 /* AddToBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasket.swift; sourceTree = "<group>"; };
 		8465BEEF28B386D4005431B6 /* AddToBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketRequestFactory.swift; sourceTree = "<group>"; };
 		8465BEF128B386E7005431B6 /* DeleteFromBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasket.swift; sourceTree = "<group>"; };
@@ -141,6 +178,15 @@
 		8499CEA928A91D5D008A8CA2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8499CEAE28AA7650008A8CA2 /* RequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryTests.swift; sourceTree = "<group>"; };
 		8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryStub.swift; sourceTree = "<group>"; };
+		849C1E6628FC869700BA8C9F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		84AC89EA28FC448600EC791E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
+		84AC89EE28FC612200EC791E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		84ADFD8F2901075F00FBF068 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84DAA7E828F9727300D638B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
+		84DAA7EE28F98C3500D638B8 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		84F85E9928AF4F620039E8BC /* DeleteReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReview.swift; sourceTree = "<group>"; };
 		84F85E9B28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReviewRequestFactory.swift; sourceTree = "<group>"; };
 		84F85E9D28AF4F910039E8BC /* GetReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewList.swift; sourceTree = "<group>"; };
@@ -206,6 +252,35 @@
 				8F53346A5B13D4B41BF41B75 /* Pods_GBShopTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		842444C928FBC2C300F70154 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				842444CA28FBC2E300F70154 /* BaseTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		84567C3728FA969E00B7E9B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				849C1E6328FC862600BA8C9F /* BaseControllers */,
+				849C1E6428FC864100BA8C9F /* ViewControllers */,
+				849C1E6528FC865C00BA8C9F /* FunctionalControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84567C4D28FAFCAD00B7E9B3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				84567C5328FAFD7300B7E9B3 /* BaseButton.swift */,
+				84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */,
+				84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */,
+				84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		8465BEEA28B3854A005431B6 /* AddToBasket */ = {
@@ -300,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				8499CE2C289FE5B3008A8CA2 /* AppDelegate.swift */,
+				84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */,
 				8499CE61289FE911008A8CA2 /* BuissnessLogic */,
 				8499CE62289FE92A008A8CA2 /* Entity */,
 				8499CE63289FE933008A8CA2 /* Assembly */,
@@ -311,6 +387,7 @@
 		8499CE5E289FE8CD008A8CA2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				84DAA7F028F98D7600D638B8 /* Extensions */,
 				8499CE6528A14131008A8CA2 /* Network */,
 			);
 			path = Core;
@@ -321,6 +398,8 @@
 			children = (
 				8499CE35289FE5B4008A8CA2 /* Assets.xcassets */,
 				8499CE37289FE5B4008A8CA2 /* LaunchScreen.storyboard */,
+				84DAA7EE28F98C3500D638B8 /* Resources.swift */,
+				84DAA7F328F99E7700D638B8 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -363,6 +442,8 @@
 		8499CE64289FE93E008A8CA2 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				84567C3728FA969E00B7E9B3 /* Controllers */,
+				84DAA7EA28F98AB900D638B8 /* CustomViews */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -470,6 +551,70 @@
 				8499CEB028AA77B6008A8CA2 /* RequestFactoryStub.swift */,
 			);
 			path = RequestFactoryTests;
+			sourceTree = "<group>";
+		};
+		849C1E6328FC862600BA8C9F /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84567C3B28FAA94C00B7E9B3 /* BaseViewController.swift */,
+				842444CC28FBDDE700F70154 /* BaseScrollViewController.swift */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+		849C1E6428FC864100BA8C9F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84DAA7E828F9727300D638B8 /* StartViewController.swift */,
+				84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */,
+				842444C728FBBFB200F70154 /* RegistrationViewController.swift */,
+				849C1E6628FC869700BA8C9F /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		849C1E6528FC865C00BA8C9F /* FunctionalControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84AC89EE28FC612200EC791E /* TabBarController.swift */,
+			);
+			path = FunctionalControllers;
+			sourceTree = "<group>";
+		};
+		84ADFD8E290106DA00FBF068 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFD8F2901075F00FBF068 /* SettingsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84DAA7EA28F98AB900D638B8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				84ADFD8E290106DA00FBF068 /* Cells */,
+				842444C928FBC2C300F70154 /* TextFields */,
+				84567C4D28FAFCAD00B7E9B3 /* Buttons */,
+				84567C3D28FAAD1900B7E9B3 /* BaseView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		84DAA7F028F98D7600D638B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84DAA7F128F98DA300D638B8 /* UIColor + ext.swift */,
+				84567C3928FAA81500B7E9B3 /* UIView + ext.swift */,
+				84AC89EA28FC448600EC791E /* UIButton + ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84DAA7F328F99E7700D638B8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		84F85E9628AF4EEC0039E8BC /* AddReview */ = {
@@ -782,9 +927,11 @@
 				8499CE7F28A75D12008A8CA2 /* LogoutRequestFactory.swift in Sources */,
 				84F85E9A28AF4F620039E8BC /* DeleteReview.swift in Sources */,
 				8499CE6F28A14CCB008A8CA2 /* LoginResult.swift in Sources */,
+				84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */,
 				8499CE8528A76416008A8CA2 /* Registration.swift in Sources */,
 				8499CE7C28A75C8E008A8CA2 /* LogoutResult.swift in Sources */,
 				8499CE2D289FE5B3008A8CA2 /* AppDelegate.swift in Sources */,
+				849C1E6728FC869700BA8C9F /* SettingsViewController.swift in Sources */,
 				8499CEA228A8FB7F008A8CA2 /* GetCatalog.swift in Sources */,
 				8465BEF628B38707005431B6 /* PayBasket.swift in Sources */,
 				8499CE6D28A14BF7008A8CA2 /* RequestRouter.swift in Sources */,
@@ -793,33 +940,50 @@
 				8499CE8128A75D1F008A8CA2 /* Logout.swift in Sources */,
 				8465BF0028B3890E005431B6 /* PayBasketResult.swift in Sources */,
 				8465BEF828B3871F005431B6 /* PayBasketRequestFactory.swift in Sources */,
+				84567C4A28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 				84F85EA428AF4FD40039E8BC /* AddReviewRequestFactory.swift in Sources */,
+				84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */,
+				842444CD28FBDDE700F70154 /* BaseScrollViewController.swift in Sources */,
 				8465BEEE28B386A1005431B6 /* AddToBasket.swift in Sources */,
 				84F85E9C28AF4F7F0039E8BC /* DeleteReviewRequestFactory.swift in Sources */,
 				8499CEA428A8FB9D008A8CA2 /* GetCatalogRequestFactory.swift in Sources */,
 				8499CE6928A145DD008A8CA2 /* ErrorParser.swift in Sources */,
 				8499CE6728A141D5008A8CA2 /* AbstractErrorParser.swift in Sources */,
+				84567C3C28FAA94C00B7E9B3 /* BaseViewController.swift in Sources */,
 				8499CE6B28A147A5008A8CA2 /* DataRequest.swift in Sources */,
 				84F85EA828AF51190039E8BC /* GetReviewListResult.swift in Sources */,
 				8499CEA028A8FB70008A8CA2 /* GetGoodRequestFactory.swift in Sources */,
+				84DAA7F228F98DA300D638B8 /* UIColor + ext.swift in Sources */,
 				8465BEFC28B388DB005431B6 /* AddToBasketResult.swift in Sources */,
+				84567C3A28FAA81500B7E9B3 /* UIView + ext.swift in Sources */,
 				84F85EAA28AF51330039E8BC /* DeleteReviewResult.swift in Sources */,
 				8499CE7A28A613FF008A8CA2 /* RequestFactory.swift in Sources */,
 				8499CE9128A771F4008A8CA2 /* ChangeUserDataResult.swift in Sources */,
 				8499CEA828A91CF8008A8CA2 /* GetCatalogResult.swift in Sources */,
 				8465BEF028B386D4005431B6 /* AddToBasketRequestFactory.swift in Sources */,
+				84567C3E28FAAD1900B7E9B3 /* BaseView.swift in Sources */,
+				84DAA7E928F9727300D638B8 /* StartViewController.swift in Sources */,
+				84DAA7EF28F98C3500D638B8 /* Resources.swift in Sources */,
+				84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */,
 				8465BEF428B386F7005431B6 /* DeleteFromBasketRequestFactory.swift in Sources */,
 				8499CE9E28A8FB4B008A8CA2 /* GetGood.swift in Sources */,
 				8499CE7428A612BE008A8CA2 /* AuthRequestFactory.swift in Sources */,
+				84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */,
 				8499CE8F28A771D4008A8CA2 /* ChangeUserDataRequestFactory.swift in Sources */,
 				8499CE8A28A76481008A8CA2 /* RegistrationResult.swift in Sources */,
 				8499CE7128A14CD9008A8CA2 /* User.swift in Sources */,
 				84F85EA628AF51080039E8BC /* AddReviewResult.swift in Sources */,
+				84567C4628FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84F85EAC28AF730C0039E8BC /* Review.swift in Sources */,
 				8465BEFE28B388F0005431B6 /* DeleteFromBasketResult.swift in Sources */,
+				84567C5428FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
+				84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */,
 				8499CE7828A61316008A8CA2 /* Auth.swift in Sources */,
+				842444CB28FBC2E300F70154 /* BaseTextField.swift in Sources */,
 				84F85EA228AF4FBC0039E8BC /* AddReview.swift in Sources */,
 				8499CEA628A8FCA4008A8CA2 /* GetGoodResult.swift in Sources */,
+				842444C828FBBFB200F70154 /* RegistrationViewController.swift in Sources */,
+				84567C5028FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				84F85E9E28AF4F910039E8BC /* GetReviewList.swift in Sources */,
 				8499CE8D28A771BA008A8CA2 /* ChangeUserData.swift in Sources */,
 				84F85EB228AF783F0039E8BC /* Constants.swift in Sources */,
@@ -837,6 +1001,10 @@
 				8499CE9828A78F70008A8CA2 /* ApiErrorStub.swift in Sources */,
 				8499CE9A28A78F87008A8CA2 /* ErrorParserStub.swift in Sources */,
 				8499CEAF28AA7650008A8CA2 /* RequestFactoryTests.swift in Sources */,
+				84567C5528FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
+				84567C4728FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
+				84567C5128FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
+				84567C4B28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,7 +1013,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8499CE4E289FE5B4008A8CA2 /* GBShopUITests.swift in Sources */,
+				84567C4828FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
+				84567C5228FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				8499CE50289FE5B4008A8CA2 /* GBShopUITestsLaunchTests.swift in Sources */,
+				84567C5628FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
+				84567C4C28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,14 +1170,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Info.plist;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1017,7 +1191,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1027,14 +1201,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Info.plist;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1046,7 +1222,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1060,6 +1236,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.GBShopTests;
@@ -1081,6 +1258,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.GBShopTests;
@@ -1101,6 +1279,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.GBShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1120,6 +1299,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mertensoid.GBShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
