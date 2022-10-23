@@ -28,7 +28,7 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let catalogController = UIViewController()
+        let catalogController = CatalogTableViewController()
         let basketController = UIViewController()
         let settingsController = SettingsViewController()
         
