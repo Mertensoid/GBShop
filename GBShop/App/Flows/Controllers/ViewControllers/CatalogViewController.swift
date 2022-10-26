@@ -7,16 +7,16 @@
 
 import UIKit
 
-class CatalogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    let headerView = UIView()
+class CatalogViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+
     let tableView = UITableView()
-    
     let myTestCatalog = MyTestCatalog()
+    var isFilterShown = false
+    var heightWithFilterConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Каталог"
+        
         tableView.delegate = self
         tableView.dataSource = self
         addViews()
@@ -39,13 +39,14 @@ class CatalogViewController: UIViewController, UITableViewDelegate, UITableViewD
             mainProperty: myTestCatalog.catalog[indexPath.row].mainProperty,
             secondaryProperty: myTestCatalog.catalog[indexPath.row].secondaryProperty,
             usage: myTestCatalog.catalog[indexPath.row].usagePictures)
-        
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let productVC = ProductViewController()
+        let productVC = ProductViewController(product: myTestCatalog.catalog[indexPath.row].productName)
         navigationController?.pushViewController(productVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,30 +55,48 @@ class CatalogViewController: UIViewController, UITableViewDelegate, UITableViewD
 }
 
 @objc extension CatalogViewController {
-    func addViews() {
-        view.addSubview(headerView)
+    override func addViews() {
+        super.addViews()
         view.addSubview(tableView)
     }
-    func layoutViews() {
+    override func layoutViews() {
+        super.layoutViews()
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 88),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-    func configure() {
-        view.backgroundColor = .white
+        heightWithFilterConstraint = headerView.heightAnchor.constraint(equalToConstant: 100)
         
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = Resources.Colors.darkRed
-        navigationController?.navigationBar.barTintColor = .yellow
-        navigationController?.navigationBar.isTranslucent = false
+    }
+    override func configure() {
+        super.configure()
+        headerTitle.text = "Каталог"
+        setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(backButtonPressed))
+        setRightHeaderButton(image: UIImage(named: "filter_inactive_icon.png") ?? UIImage(), selector: #selector(filterButtonPressed))
         tableView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    func backButtonPressed() {
+        self.dismiss(animated: true)
+    }
+    func filterButtonPressed() {
+        if headerView.translatesAutoresizingMaskIntoConstraints {
+            headerView.translatesAutoresizingMaskIntoConstraints.toggle()
+        }
+        if !isFilterShown {
+            isFilterShown.toggle()
+            self.heightWithFilterConstraint.constant = 150
+            UIView.animate(withDuration: 0.5) {
+                self.heightWithFilterConstraint.isActive = true
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            isFilterShown.toggle()
+            self.heightWithFilterConstraint.constant = 100
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }

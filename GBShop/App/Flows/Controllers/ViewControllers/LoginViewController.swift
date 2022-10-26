@@ -9,7 +9,6 @@ import UIKit
 
 final class LoginViewController: BaseScrollViewController {
 
-    let headerLabel = UILabel()
     let loginTextField = BaseTextField()
     let passwordTextField = BaseTextField()
     let joinButton = ApplyButton()
@@ -18,22 +17,16 @@ final class LoginViewController: BaseScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Вход"
-        navigationItem.titleView?.tintColor = .white
+        
         addViews()
         layoutViews()
         configure()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
 }
 
 extension LoginViewController {
     override func addViews() {
         super.addViews()
-        scrollView.addSubview(headerLabel)
         scrollView.addSubview(loginTextField)
         scrollView.addSubview(passwordTextField)
         scrollView.addSubview(joinButton)
@@ -43,9 +36,6 @@ extension LoginViewController {
     override func layoutViews() {
         super.layoutViews()
         NSLayoutConstraint.activate([
-            
-            headerLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            headerLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -50),
 
             loginTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
             loginTextField.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -20),
@@ -76,10 +66,8 @@ extension LoginViewController {
     override func configure() {
         super.configure()
         self.navigationController?.navigationBar.isHidden = false
-        
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.text = "Вход"
-        headerLabel.font = Resources.Fonts.helveticaRegular(with: 30)
+        headerTitle.text = "Вход"
+        setLeftHeaderButton(image: UIImage(named: "logout_icon.png") ?? UIImage(), selector: #selector(logout))
 
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         loginTextField.placeholder = "E-mail"
@@ -105,14 +93,19 @@ extension LoginViewController {
     func joinButtonPressed() {
         print("Join button pressed")
         let tabVC = TabBarController()
-        navigationController?.pushViewController(tabVC, animated: true)
+        tabVC.modalPresentationStyle = .fullScreen
+        present(tabVC, animated: true)
     }
     func registrationButtonPressed() {
         print("Registration button pressed")
         let regVC = RegistrationViewController()
-        navigationController?.pushViewController(regVC, animated: true)
+        regVC.modalPresentationStyle = .fullScreen
+        present(regVC, animated: true)
     }
     func forgotPasswordButtonPressed() {
         print("Forgot password button pressed")
+    }
+    func logout() {
+        self.dismiss(animated: true)
     }
 }

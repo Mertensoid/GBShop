@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class CatalogCell: UITableViewCell {
-    
-    let mainCellView = UIView()
+final class CatalogCell: BaseTableCell {
     
     let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
     let productNameTitle = UILabel()
@@ -41,23 +39,17 @@ final class CatalogCell: UITableViewCell {
 }
 
 @objc extension CatalogCell {
-    func addViews() {
-        self.addSubview(mainCellView)
-        
+    override func addViews() {
+        super.addViews()
         mainCellView.addSubview(image)
         mainCellView.addSubview(productNameTitle)
         mainCellView.addSubview(mainPropertyTitle)
         mainCellView.addSubview(secondaryPropertyTitle)
         mainCellView.addSubview(stackView)
-        
     }
-    func layoutViews() {
+    override func layoutViews() {
+        super.layoutViews()
         NSLayoutConstraint.activate([
-            mainCellView.heightAnchor.constraint(equalToConstant: 125),
-            mainCellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            mainCellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            mainCellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            
             productNameTitle.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
             productNameTitle.topAnchor.constraint(equalTo: mainCellView.topAnchor, constant: 10),
             
@@ -71,12 +63,8 @@ final class CatalogCell: UITableViewCell {
             stackView.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10),
         ])
     }
-    func configure() {
-        
-        mainCellView.translatesAutoresizingMaskIntoConstraints = false
-        mainCellView.layer.cornerRadius = 10
-        mainCellView.backgroundColor = .white
-        mainCellView.setOpacity()
+    override func configure() {
+        super.configure()
         
         productNameTitle.translatesAutoresizingMaskIntoConstraints = false
         productNameTitle.font = Resources.Fonts.helveticaBold(with: 16)

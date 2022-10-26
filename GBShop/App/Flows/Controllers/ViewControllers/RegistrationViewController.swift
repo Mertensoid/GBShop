@@ -9,7 +9,6 @@ import UIKit
 
 final class RegistrationViewController: BaseScrollViewController {
     
-    let headerLabel = UILabel()
     let nicknameTextField = BaseTextField()
     let loginTextField = BaseTextField()
     let passwordTextField = BaseTextField()
@@ -19,7 +18,7 @@ final class RegistrationViewController: BaseScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Регистрация"
+        
         addViews()
         layoutViews()
         configure()
@@ -29,7 +28,6 @@ final class RegistrationViewController: BaseScrollViewController {
 extension RegistrationViewController {
     override func addViews() {
         super.addViews()
-        scrollView.addSubview(headerLabel)
         scrollView.addSubview(nicknameTextField)
         scrollView.addSubview(loginTextField)
         scrollView.addSubview(passwordTextField)
@@ -41,8 +39,6 @@ extension RegistrationViewController {
     override func layoutViews() {
         super.layoutViews()
         NSLayoutConstraint.activate([
-            headerLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            headerLabel.bottomAnchor.constraint(equalTo: nicknameTextField.topAnchor, constant: -30),
             
             nicknameTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
             nicknameTextField.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -20),
@@ -74,10 +70,8 @@ extension RegistrationViewController {
     
     override func configure() {
         super.configure()
-        
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.text = "Регистрация"
-        headerLabel.font = Resources.Fonts.helveticaRegular(with: 30)
+        headerTitle.text = "Регистрация"
+        setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(haveAccountButtonPressed))
         
         nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
         nicknameTextField.placeholder = "Nickname"
@@ -103,10 +97,10 @@ extension RegistrationViewController {
 
 @objc extension RegistrationViewController {
     func registrationButtonPressed() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     func haveAccountButtonPressed() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 

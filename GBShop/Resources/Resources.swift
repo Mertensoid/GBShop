@@ -9,6 +9,7 @@ import UIKit
 enum Resources {
     enum Colors {
         static let darkRed = UIColor(hexString: "D63832")
+        static let red = UIColor.red
         static let lightRed = UIColor(hexString: "E9702B")
         
         static let explosionYellow = UIColor(hexString: "DED60C")
