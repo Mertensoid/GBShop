@@ -13,6 +13,8 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
     
     let tableView = UITableView()
     let addToBasketView = UIView()
+    let quantityControl = QuantityControl()
+    let addToBasketButton = AddToBasketButton()
     
     init(product: String) {
         self.product = product
@@ -63,7 +65,7 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         case 3:
             return 85
         case 4:
-            return 430
+            return 365
         default:
             return 0
         }
@@ -89,7 +91,10 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         case 3:
             cell = ProductRatingCell(rating: 3, reviews: 564)
         case 4:
-            cell = ProductReviewsCell()
+            cell = ProductReviewsCell(
+                name: "Иванов И.И.",
+                date: "16:00 - 15.09.2020",
+                review: "В один прекрасный день к нам в наш скромный офис пришел пожарный инспектор и начал искать до чего докопаться. И естественно нашел, выписал предписание на установку системы пожаротушения. Не знаю кто и каким местом думали когда строилось наше здание, но трубы для водопровода заложили без запаса, по минимуму. Ставить бочку на крышу и разводить трубы как то не хотелось. Начали искать решение и натолкнулись на различные типы модулей пожаротушения. Не буду грузить своими изысканиями, скажу что остановился на порошковых \"Гарантах\".")
         default:
             cell = UITableViewCell()
         }
@@ -103,6 +108,8 @@ extension ProductViewController {
         super.addViews()
         view.addSubview(tableView)
         view.addSubview(addToBasketView)
+        addToBasketView.addSubview(quantityControl)
+        addToBasketView.addSubview(addToBasketButton)
     }
     override func layoutViews() {
         super.layoutViews()
@@ -115,9 +122,16 @@ extension ProductViewController {
             addToBasketView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             addToBasketView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             addToBasketView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -83),
-            addToBasketView.heightAnchor.constraint(equalToConstant: 80)
+            addToBasketView.heightAnchor.constraint(equalToConstant: 60),
+            
+            quantityControl.centerYAnchor.constraint(equalTo: addToBasketView.centerYAnchor),
+            quantityControl.leadingAnchor.constraint(equalTo: addToBasketView.leadingAnchor, constant: 10),
+            quantityControl.widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width / 2) - 15),
+            
+            addToBasketButton.centerYAnchor.constraint(equalTo: addToBasketView.centerYAnchor),
+            addToBasketButton.trailingAnchor.constraint(equalTo: addToBasketView.trailingAnchor, constant: -10),
+            addToBasketButton.widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width / 2) - 15),
         ])
-        
     }
     override func configure() {
         super.configure()
@@ -129,8 +143,17 @@ extension ProductViewController {
         
         addToBasketView.translatesAutoresizingMaskIntoConstraints = false
         addToBasketView.backgroundColor = Resources.Colors.white
+        
+        quantityControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        addToBasketButton.translatesAutoresizingMaskIntoConstraints = false
+        addToBasketButton.setTitle("В корзину", for: .normal)
+        addToBasketButton.addTarget(self, action: #selector(addToBasket), for: .touchUpInside)
     }
     @objc func backButtonPressed() {
         navigationController?.popViewController(animated: true)
+    }
+    @objc func addToBasket() {
+        print("В карзину добавлено \(quantityControl.getQuantity()) шт. \(product)")
     }
 }

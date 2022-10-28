@@ -76,6 +76,7 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
         setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(backButtonPressed))
         setRightHeaderButton(image: UIImage(named: "filter_inactive_icon.png") ?? UIImage(), selector: #selector(filterButtonPressed))
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
     }
     func backButtonPressed() {
         self.dismiss(animated: true)

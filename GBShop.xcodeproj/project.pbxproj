@@ -81,6 +81,8 @@
 		849D82FA2908F48A008F30EF /* ProductReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D82F92908F48A008F30EF /* ProductReviewsCell.swift */; };
 		849D82FC290987F8008F30EF /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D82FB290987F8008F30EF /* BaseTableCell.swift */; };
 		849D82FF29098E7A008F30EF /* ProductTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D82FE29098E7A008F30EF /* ProductTagView.swift */; };
+		849D8301290C0985008F30EF /* QuantityControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D8300290C0985008F30EF /* QuantityControl.swift */; };
+		849D8303290C1104008F30EF /* AddToBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D8302290C1104008F30EF /* AddToBasketButton.swift */; };
 		84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EA28FC448600EC791E /* UIButton + ext.swift */; };
 		84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EE28FC612200EC791E /* TabBarController.swift */; };
 		84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFD8F2901075F00FBF068 /* SettingsCell.swift */; };
@@ -198,6 +200,8 @@
 		849D82F92908F48A008F30EF /* ProductReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewsCell.swift; sourceTree = "<group>"; };
 		849D82FB290987F8008F30EF /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		849D82FE29098E7A008F30EF /* ProductTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTagView.swift; sourceTree = "<group>"; };
+		849D8300290C0985008F30EF /* QuantityControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityControl.swift; sourceTree = "<group>"; };
+		849D8302290C1104008F30EF /* AddToBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketButton.swift; sourceTree = "<group>"; };
 		84AC89EA28FC448600EC791E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		84AC89EE28FC612200EC791E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		84ADFD8F2901075F00FBF068 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -304,6 +308,7 @@
 				84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */,
 				84567C4928FAFBDC00B7E9B3 /* CancelButton.swift */,
 				84567C4F28FAFCE000B7E9B3 /* ClearButton.swift */,
+				849D8302290C1104008F30EF /* AddToBasketButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 			children = (
 				84567C3D28FAAD1900B7E9B3 /* BaseView.swift */,
 				849D82FE29098E7A008F30EF /* ProductTagView.swift */,
+				849D8300290C0985008F30EF /* QuantityControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -985,6 +991,7 @@
 				8499CE7C28A75C8E008A8CA2 /* LogoutResult.swift in Sources */,
 				8499CE2D289FE5B3008A8CA2 /* AppDelegate.swift in Sources */,
 				849D82FC290987F8008F30EF /* BaseTableCell.swift in Sources */,
+				849D8303290C1104008F30EF /* AddToBasketButton.swift in Sources */,
 				849C1E6728FC869700BA8C9F /* SettingsViewController.swift in Sources */,
 				849D82F82908F475008F30EF /* ProductRatingCell.swift in Sources */,
 				84EA67862902DE4800632F2D /* SmallTextField.swift in Sources */,
@@ -1035,6 +1042,7 @@
 				8499CE8A28A76481008A8CA2 /* RegistrationResult.swift in Sources */,
 				84EA678D2903134B00632F2D /* TestCatalog.swift in Sources */,
 				8499CE7128A14CD9008A8CA2 /* User.swift in Sources */,
+				849D8301290C0985008F30EF /* QuantityControl.swift in Sources */,
 				84F85EA628AF51080039E8BC /* AddReviewResult.swift in Sources */,
 				84567C4628FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84F85EAC28AF730C0039E8BC /* Review.swift in Sources */,
