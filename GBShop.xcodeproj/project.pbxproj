@@ -428,7 +428,6 @@
 			children = (
 				8499CE35289FE5B4008A8CA2 /* Assets.xcassets */,
 				8499CE37289FE5B4008A8CA2 /* LaunchScreen.storyboard */,
-				84DAA7EE28F98C3500D638B8 /* Resources.swift */,
 				84DAA7F328F99E7700D638B8 /* Fonts */,
 			);
 			path = Resources;
@@ -739,6 +738,7 @@
 			isa = PBXGroup;
 			children = (
 				84F85EB128AF783F0039E8BC /* Constants.swift */,
+				84DAA7EE28F98C3500D638B8 /* Resources.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";

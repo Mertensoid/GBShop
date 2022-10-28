@@ -14,11 +14,17 @@ struct GetCatalogResult: Codable {
     /// название товара
     let productName: String
     /// цена товара
-    let price: Int
+    let productPicture: String
+    let mainProperty: String
+    let secondaryProperty: String
+    let usagePictures: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
         case productName = "product_name"
-        case price
+        case productPicture = "product_picture"
+        case mainProperty = "main_property"
+        case secondaryProperty = "secondary_property"
+        case usagePictures = "usage_pictures"
     }
 }

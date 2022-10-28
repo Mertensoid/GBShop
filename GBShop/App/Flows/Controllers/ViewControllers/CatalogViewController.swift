@@ -10,9 +10,18 @@ import UIKit
 class CatalogViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView()
-    let myTestCatalog = MyTestCatalog()
+    //let myTestCatalog = MyTestCatalog()
     var isFilterShown = false
     var heightWithFilterConstraint: NSLayoutConstraint!
+    
+    let requestFactory = RequestFactory()
+    var myCatalog = [GetCatalogResult]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +31,18 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
         addViews()
         layoutViews()
         configure()
+        
+        let getCatalog = requestFactory.makeGetCatalogRequestFactory()
+        getCatalog.getCatalog(
+            pageNumber: 1,
+            idCategory: 1) { response in
+                switch response.result {
+                case .success(let getCatalog):
+                    self.myCatalog = getCatalog
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,22 +50,22 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myTestCatalog.catalog.count
+        return myCatalog.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CatalogCell()
         cell.configureData(
-            name: myTestCatalog.catalog[indexPath.row].productName,
-            picture: myTestCatalog.catalog[indexPath.row].picture,
-            mainProperty: myTestCatalog.catalog[indexPath.row].mainProperty,
-            secondaryProperty: myTestCatalog.catalog[indexPath.row].secondaryProperty,
-            usage: myTestCatalog.catalog[indexPath.row].usagePictures)
+            name: myCatalog[indexPath.row].productName,
+            picture: myCatalog[indexPath.row].productPicture,
+            mainProperty: myCatalog[indexPath.row].mainProperty,
+            secondaryProperty: myCatalog[indexPath.row].secondaryProperty,
+            usage: myCatalog[indexPath.row].usagePictures)
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let productVC = ProductViewController(product: myTestCatalog.catalog[indexPath.row].productName)
+        let productVC = ProductViewController(product: myCatalog[indexPath.row].productName)
         navigationController?.pushViewController(productVC, animated: true)
         
     }
