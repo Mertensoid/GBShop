@@ -66,16 +66,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print(error.localizedDescription)
                     }
                 }
-            let getGood = requestFactory.makeGetGoodRequestFactory()
-            getGood.getGood(
-                id: 123) { response in
-                    switch response.result {
-                    case .success(let getGood):
-                        print(getGood)
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
+//            let getGood = requestFactory.makeGetGoodRequestFactory()
+//            getGood.getGood(
+//                id: 123) { response in
+//                    switch response.result {
+//                    case .success(let getGood):
+//                        print(getGood)
+//                    case .failure(let error):
+//                        print(error.localizedDescription)
+//                    }
+//                }
 //            let getCatalog = requestFactory.makeGetCatalogRequestFactory()
 //            getCatalog.getCatalog(
 //                pageNumber: 1,

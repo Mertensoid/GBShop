@@ -11,8 +11,10 @@ final class ProductPictureCell: BaseTableCell {
     
     let productPicture = UIImageView()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    init(picture: UIImage) {
+        super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
+        
+        productPicture.image = picture
         
         addViews()
         layoutViews()
@@ -41,7 +43,6 @@ final class ProductPictureCell: BaseTableCell {
     override func configure() {
         super.configure()
         productPicture.translatesAutoresizingMaskIntoConstraints = false
-        productPicture.image = UIImage(named: "garant_5")
         productPicture.contentMode = .scaleAspectFit
     }
 }

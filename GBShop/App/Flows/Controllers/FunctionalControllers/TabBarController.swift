@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         tabBar.layer.masksToBounds = true
         
         let catalogController = CatalogViewController()
-        let basketController = UIViewController()
+        let basketController = BasketViewController()
         let settingsController = SettingsViewController()
         
         let catalogNavigationController = UINavigationController(rootViewController: catalogController)

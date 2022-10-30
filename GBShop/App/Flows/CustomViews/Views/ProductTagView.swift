@@ -52,5 +52,7 @@ class ProductTagView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 5
+        
+        
     }
 }

@@ -46,12 +46,12 @@ extension ClearButton {
         
     }
     @objc override func handleIn() {
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.2) {
             self.label.alpha = 0.55
         }
     }
     @objc override func handleOut() {
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.2) {
             self.label.alpha = 1
         }
     }

@@ -10,7 +10,6 @@ import UIKit
 class CatalogViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView()
-    //let myTestCatalog = MyTestCatalog()
     var isFilterShown = false
     var heightWithFilterConstraint: NSLayoutConstraint!
     
@@ -65,7 +64,7 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let productVC = ProductViewController(product: myCatalog[indexPath.row].productName)
+        let productVC = ProductViewController(productID: indexPath.row, productName: myCatalog[indexPath.row].productName)
         navigationController?.pushViewController(productVC, animated: true)
         
     }

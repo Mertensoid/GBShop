@@ -21,8 +21,10 @@ final class ProductPriceCell: BaseTableCell {
         backgroundColor: Resources.Colors.red,
         textColor: Resources.Colors.white)
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    init(price: Int) {
+        super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
+        
+        priceLabel.text = "\(price) ₽"
         
         addViews()
         layoutViews()
@@ -63,7 +65,6 @@ final class ProductPriceCell: BaseTableCell {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.font = Resources.Fonts.helveticaBold(with: 30)
         priceLabel.textColor = Resources.Colors.red
-        priceLabel.text = "5600 ₽"
         
         tagsStackView.translatesAutoresizingMaskIntoConstraints = false
         tagsStackView.axis = .vertical

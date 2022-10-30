@@ -108,6 +108,7 @@ final class ProductDescriptionCell: BaseTableCell {
             
             descriptionLabel.leadingAnchor.constraint(equalTo: mainCellView.leadingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            descriptionLabel.topAnchor.constraint(equalTo: currentTitle.bottomAnchor, constant: 10),
             descriptionLabel.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10)
         ])
     }
