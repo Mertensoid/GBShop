@@ -8,11 +8,14 @@
 import UIKit
 
 final class ProductViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let requestFactory = RequestFactory()
-    let productName: String
-    let productID: Int
-    var product: GetGoodResult? = nil {
+    private let tableView = UITableView()
+    private let addToBasketView = UIView()
+    private let quantityControl = QuantityControl()
+    private let addToBasketButton = AddToBasketButton()
+    private let requestFactory = RequestFactory()
+    private let productName: String
+    private let productID: Int
+    private var product: GetGoodResult? = nil {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -20,17 +23,11 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         }
     }
     
-    let tableView = UITableView()
-    let addToBasketView = UIView()
-    let quantityControl = QuantityControl()
-    let addToBasketButton = AddToBasketButton()
-    
     init(productID: Int, productName: String) {
         self.productID = productID
         self.productName = productName
         super.init(nibName: nil, bundle: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -49,14 +46,9 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
                     print(error.localizedDescription)
                 }
             }
-        
         addViews()
         layoutViews()
         configure()
-    }
-    
-    func configureProduct() {
-        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -71,7 +63,6 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -88,7 +79,6 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell!
         switch indexPath.section {
@@ -174,10 +164,19 @@ extension ProductViewController {
         navigationController?.popViewController(animated: true)
     }
     @objc func addToBasket() {
-        if let product = product {
-            BasketDataSingleton.shared.basketData.append((product, quantityControl.getQuantity()))
-            BasketDataSingleton.shared.totalPrice += (Double(product.productPrice) * Double(quantityControl.getQuantity()))
+        if let product = self.product {
+            var isAlreadyExistsIndex = -1
+            for index in BasketDataSingleton.shared.basketData.indices {
+                if BasketDataSingleton.shared.basketData[index].0.id == product.id {
+                    isAlreadyExistsIndex = index
+                }
+            }
+            if isAlreadyExistsIndex > -1 {
+                BasketDataSingleton.shared.basketData[isAlreadyExistsIndex].1 += self.quantityControl.getQuantity()
+            } else {
+                BasketDataSingleton.shared.basketData.append((product, self.quantityControl.getQuantity()))
+            }
+            BasketDataSingleton.shared.updateTotalPrice()
         }
-        print("В карзину добавлено \(quantityControl.getQuantity()) шт. \(String(describing: product?.productName))")
     }
 }

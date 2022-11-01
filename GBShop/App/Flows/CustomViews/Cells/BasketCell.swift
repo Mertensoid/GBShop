@@ -8,12 +8,10 @@
 import UIKit
 
 final class BasketCell: BaseTableCell {
-    
     var delegate: OptionButtonsDelegate?
     var indexPath: IndexPath?
     
     private var price: Double = 0
-    
     private let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
     private let productNameTitle = UILabel()
     private let priceTitle = UILabel()
@@ -22,17 +20,14 @@ final class BasketCell: BaseTableCell {
     
     init(name: String, image: UIImage, quantity: Int, price: Double) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-        
         productNameTitle.text = name
         self.image.image = image
         quantityButton.setLabel(text: "\(quantity)")
         priceTitle.text = "\(price) ₽"
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -83,14 +78,14 @@ final class BasketCell: BaseTableCell {
         deleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
         
         quantityButton.translatesAutoresizingMaskIntoConstraints = false
-        quantityButton.addTarget(self, action: #selector(quantityButtoPressed), for: .touchUpInside)
+        quantityButton.addTarget(self, action: #selector(quantityButtonPressed), for: .touchUpInside)
     }
     func deleteButtonPressed() {
         if let indexPath = indexPath {
             self.delegate?.deleteButtonTapped(at: indexPath)
         }
     }
-    func quantityButtoPressed() {
+    func quantityButtonPressed() {
         if let indexPath = indexPath {
             self.delegate?.quantityButtonTapped(at: indexPath)
         }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClearBasketButton: UIButton {
+final class ClearBasketButton: UIButton {
     
     private let stackView = UIStackView()
     private let icon = UIImageView()
@@ -15,12 +15,10 @@ class ClearBasketButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,7 +44,7 @@ class ClearBasketButton: UIButton {
         layer.borderColor = Resources.Colors.darkRed.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
-        self.makeTapWithButtonShadow(self)
+        makeTapWithButtonShadow(self)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal

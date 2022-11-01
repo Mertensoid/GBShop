@@ -7,15 +7,12 @@
 
 import UIKit
 
-class BuyButton: UIButton {
-    
+final class BuyButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,6 +35,6 @@ class BuyButton: UIButton {
         layer.borderWidth = 1
         layer.cornerRadius = 5
         setOpacity()
-        self.makeTapWithButtonShadow(self)
+        makeTapWithButtonShadow(self)
     }
 }

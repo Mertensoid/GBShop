@@ -13,30 +13,22 @@ class BaseButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addViews()
         layoutViews()
         configure()
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func setTitle(_ title: String) {
         label.text = title
     }
-    
-    
 }
 
 @objc extension BaseButton {
-    
     func addViews() {
         addSubview(label)
     }
-    
     func layoutViews() {
         NSLayoutConstraint.activate([
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -45,7 +37,6 @@ class BaseButton: UIButton {
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
-    
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center

@@ -7,20 +7,17 @@
 
 import UIKit
 
-class DeleteButton: UIButton {
-
+final class DeleteButton: UIButton {
     private let stackView = UIStackView()
     private let icon = UIImageView()
     private let label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,7 +43,7 @@ class DeleteButton: UIButton {
         layer.borderColor = Resources.Colors.darkRed.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
-        self.makeTapWithButtonShadow(self)
+        makeTapWithButtonShadow(self)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal

@@ -8,19 +8,15 @@
 import UIKit
 
 final class ProductPictureCell: BaseTableCell {
-    
-    let productPicture = UIImageView()
+    private let productPicture = UIImageView()
     
     init(picture: UIImage) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-        
         productPicture.image = picture
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

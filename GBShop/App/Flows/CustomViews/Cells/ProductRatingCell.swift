@@ -8,11 +8,10 @@
 import UIKit
 
 final class ProductRatingCell: BaseTableCell {
-    
-    let ratingTitle = UILabel()
-    let reviewsTitle = UILabel()
-    let reviewsLabel = UILabel()
-    let starsStackView = UIStackView()
+    private let ratingTitle = UILabel()
+    private let reviewsTitle = UILabel()
+    private let reviewsLabel = UILabel()
+    private let starsStackView = UIStackView()
     
     init(rating: Int, reviews: Int) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
@@ -31,7 +30,6 @@ final class ProductRatingCell: BaseTableCell {
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

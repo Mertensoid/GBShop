@@ -8,24 +8,20 @@
 import UIKit
 
 final class ProductReviewsCell: BaseTableCell {
-    
-    let nameLabel = UILabel()
-    let dateLabel = UILabel()
-    let reviewLabel = UILabel()
-    let separator = UIView()
+    private let nameLabel = UILabel()
+    private let dateLabel = UILabel()
+    private let reviewLabel = UILabel()
+    private let separator = UIView()
     
     init(name: String, date: String, review: String) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-        
         nameLabel.text = name
         dateLabel.text = date
         reviewLabel.text = review
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

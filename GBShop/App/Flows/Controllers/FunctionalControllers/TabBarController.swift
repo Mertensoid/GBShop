@@ -13,13 +13,11 @@ enum Tabs: Int {
     case settings
 }
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
-    
     private func configure() {
         tabBar.tintColor = Resources.Colors.darkRed
         tabBar.backgroundColor = Resources.Colors.white
@@ -34,13 +32,10 @@ class TabBarController: UITabBarController {
         
         let catalogNavigationController = UINavigationController(rootViewController: catalogController)
         catalogNavigationController.navigationBar.isHidden = true
-        
         let basketNavigationController = UINavigationController(rootViewController: basketController)
         basketNavigationController.navigationBar.isHidden = true
-        
         let settingsNavigationController = UINavigationController(rootViewController: settingsController)
         settingsNavigationController.navigationBar.isHidden = true
-        
         
         catalogController.tabBarItem = UITabBarItem(
             title: Resources.Strings.TabBarHeaders.catalog,

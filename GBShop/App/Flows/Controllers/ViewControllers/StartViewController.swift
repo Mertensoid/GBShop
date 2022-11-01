@@ -8,14 +8,12 @@
 import UIKit
 
 final class StartViewController: UIViewController {
-
     private let logoImageView = UIImageView()
     private let logoTextView = UIImageView()
     private let startButton = ApplyButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         addViews()
         layoutViews()
         configure()
@@ -23,9 +21,7 @@ final class StartViewController: UIViewController {
 }
 
 extension StartViewController {
-    
     func addViews() {
-        
         view.addSubview(logoImageView)
         view.addSubview(logoTextView)
         view.addSubview(startButton)

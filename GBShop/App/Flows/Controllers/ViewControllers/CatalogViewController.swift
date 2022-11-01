@@ -7,14 +7,12 @@
 
 import UIKit
 
-class CatalogViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let tableView = UITableView()
-    var isFilterShown = false
-    var heightWithFilterConstraint: NSLayoutConstraint!
-    
-    let requestFactory = RequestFactory()
-    var myCatalog = [GetCatalogResult]() {
+final class CatalogViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    private let tableView = UITableView()
+    private var isFilterShown = false
+    private var heightWithFilterConstraint: NSLayoutConstraint!
+    private let requestFactory = RequestFactory()
+    private var myCatalog = [GetCatalogResult]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -24,7 +22,6 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         addViews()
@@ -47,7 +44,6 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myCatalog.count
     }
@@ -62,13 +58,11 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
         cell.selectionStyle = .none
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = ProductViewController(productID: indexPath.row, productName: myCatalog[indexPath.row].productName)
         navigationController?.pushViewController(productVC, animated: true)
         
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 135
     }
@@ -88,7 +82,6 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         heightWithFilterConstraint = headerView.heightAnchor.constraint(equalToConstant: 100)
-        
     }
     override func configure() {
         super.configure()
@@ -96,7 +89,6 @@ class CatalogViewController: BaseViewController, UITableViewDelegate, UITableVie
         setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(backButtonPressed))
         setRightHeaderButton(image: UIImage(named: "filter_inactive_icon.png") ?? UIImage(), selector: #selector(filterButtonPressed))
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
     }
     func backButtonPressed() {
         self.dismiss(animated: true)

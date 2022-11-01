@@ -8,9 +8,7 @@
 import UIKit
 
 final class BasketViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, OptionButtonsDelegate {
-
     private let requestFactory = RequestFactory()
-    
     private let tableView = UITableView()
     private let summaryView = UIView()
     private let clearBasketButton = ClearBasketButton()
@@ -19,21 +17,19 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         addViews()
         layoutViews()
         configure()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        summLabel.text = "Сумма: \(BasketDataSingleton.shared.totalPrice) ₽"
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BasketDataSingleton.shared.basketData.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = BasketCell(
             name: BasketDataSingleton.shared.basketData[indexPath.row].0.productName,
@@ -45,12 +41,14 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
         cell.indexPath = indexPath
         return cell
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 135
     }
     func deleteButtonTapped(at index: IndexPath) {
-        print("delete button tapped at index:\(index)")
+        BasketDataSingleton.shared.basketData.remove(at: index.row)
+        BasketDataSingleton.shared.updateTotalPrice()
+        summLabel.text = "Сумма: \(BasketDataSingleton.shared.totalPrice) ₽"
+        tableView.reloadData()
     }
     func quantityButtonTapped(at index: IndexPath) {
         print("quantity button tapped at index:\(index)")
@@ -68,7 +66,6 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
     }
     override func layoutViews() {
         super.layoutViews()
-        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -105,8 +102,10 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
         summaryView.backgroundColor = Resources.Colors.white
         
         clearBasketButton.translatesAutoresizingMaskIntoConstraints = false
+        clearBasketButton.addTarget(self, action: #selector(clearBasket), for: .touchUpInside)
         
         buyButton.translatesAutoresizingMaskIntoConstraints = false
+        buyButton.addTarget(self, action: #selector(buy), for: .touchUpInside)
         
         summLabel.translatesAutoresizingMaskIntoConstraints = false
         summLabel.font = Resources.Fonts.helveticaRegular(with: 24)
@@ -117,5 +116,13 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
     }
     func backButtonPressed() {
         dismiss(animated: true)
+    }
+    func clearBasket() {
+        BasketDataSingleton.shared.basketData.removeAll()
+        BasketDataSingleton.shared.updateTotalPrice()
+    }
+    func buy() {
+        let buyViewController = BaseViewController()
+        navigationController?.pushViewController(buyViewController, animated: true)
     }
 }

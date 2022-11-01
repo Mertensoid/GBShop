@@ -10,18 +10,15 @@ import UIKit
 class BaseViewController: UIViewController {
     let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
     let headerTitle = UILabel()
-    let leftHeaderButton = UIButton()
-    let rightHeaderButton = UIButton()
-    var con: NSLayoutConstraint = NSLayoutConstraint()
+    private let leftHeaderButton = UIButton()
+    private let rightHeaderButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     func setLeftHeaderButton(image: UIImage, selector: Selector) {
         headerView.addSubview(leftHeaderButton)
         leftHeaderButton.translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +33,6 @@ class BaseViewController: UIViewController {
         leftHeaderButton.contentMode = .scaleAspectFill
         leftHeaderButton.addTarget(self, action: selector, for: .touchUpInside)
     }
-    
     func setRightHeaderButton(image: UIImage, selector: Selector) {
         headerView.addSubview(rightHeaderButton)
         rightHeaderButton.translatesAutoresizingMaskIntoConstraints = false

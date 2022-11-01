@@ -8,29 +8,25 @@
 import UIKit
 
 final class ProductPriceCell: BaseTableCell {
-    
-    let priceHeaderLabel = UILabel()
-    let priceLabel = UILabel()
-    let tagsStackView = UIStackView()
-    let hasView = ProductTagView(
+    private let priceHeaderLabel = UILabel()
+    private let priceLabel = UILabel()
+    private let tagsStackView = UIStackView()
+    private let hasView = ProductTagView(
         text: "В наличии",
         backgroundColor: .green,
         textColor: Resources.Colors.black)
-    let newView = ProductTagView(
+    private let newView = ProductTagView(
         text: "Новинка",
         backgroundColor: Resources.Colors.red,
         textColor: Resources.Colors.white)
     
     init(price: Int) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-        
         priceLabel.text = "\(price) ₽"
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

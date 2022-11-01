@@ -8,25 +8,21 @@
 import UIKit
 
 final class CatalogCell: BaseTableCell {
-    
-    let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
-    let productNameTitle = UILabel()
-    let mainPropertyTitle = UILabel()
-    let secondaryPropertyTitle = UILabel()
-    let stackView = UIStackView()
+    private let image = UIImageView(frame: CGRect(x: 10, y: 10, width: 105, height: 105))
+    private let productNameTitle = UILabel()
+    private let mainPropertyTitle = UILabel()
+    private let secondaryPropertyTitle = UILabel()
+    private let stackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func configureData(name: String, picture: String, mainProperty: String, secondaryProperty: String, usage: [String]) {
         productNameTitle.text = name
         image.image = UIImage(named: picture)
@@ -65,7 +61,6 @@ final class CatalogCell: BaseTableCell {
     }
     override func configure() {
         super.configure()
-        
         productNameTitle.translatesAutoresizingMaskIntoConstraints = false
         productNameTitle.font = Resources.Fonts.helveticaBold(with: 16)
         
@@ -80,6 +75,5 @@ final class CatalogCell: BaseTableCell {
         stackView.distribution = .fill
         stackView.alignment = .trailing
         stackView.spacing = 5
-        
     }
 }
