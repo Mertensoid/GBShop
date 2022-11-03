@@ -11,11 +11,15 @@ import Foundation
 struct Review: Codable {
     /// id отзыва
     let commentId: Int
+    let reviewAuthor: String
+    let reviewDate: String
     /// текст отзыва
     let text: String
     
     enum CodingKeys: String, CodingKey {
         case commentId = "id_comment"
-        case text
+        case reviewAuthor = "review_author"
+        case reviewDate = "review_date"
+        case text = "review_text"
     }
 }

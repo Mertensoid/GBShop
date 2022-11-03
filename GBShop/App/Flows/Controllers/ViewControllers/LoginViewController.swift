@@ -8,16 +8,14 @@
 import UIKit
 
 final class LoginViewController: BaseScrollViewController {
-
-    let loginTextField = BaseTextField()
-    let passwordTextField = BaseTextField()
-    let joinButton = ApplyButton()
-    let registrationButton = CancelButton()
-    let forgotPasswordButton = ClearButton()
+    private let loginTextField = BaseTextField()
+    private let passwordTextField = BaseTextField()
+    private let joinButton = ApplyButton()
+    private let registrationButton = CancelButton()
+    private let forgotPasswordButton = ClearButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addViews()
         layoutViews()
         configure()
@@ -25,7 +23,7 @@ final class LoginViewController: BaseScrollViewController {
 }
 
 extension LoginViewController {
-    override func addViews() {
+    override internal func addViews() {
         super.addViews()
         scrollView.addSubview(loginTextField)
         scrollView.addSubview(passwordTextField)
@@ -59,9 +57,7 @@ extension LoginViewController {
             forgotPasswordButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             forgotPasswordButton.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.bottomAnchor, constant: -10),
-            
         ])
-        
     }
     override func configure() {
         super.configure()

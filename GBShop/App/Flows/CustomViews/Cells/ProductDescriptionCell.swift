@@ -8,27 +8,24 @@
 import UIKit
 
 final class ProductDescriptionCell: BaseTableCell {
-    
-    let nameTitle = UILabel()
-    let typeTitle = UILabel()
-    let locationTitle = UILabel()
-    let squareTitle = UILabel()
-    let volumeTitle = UILabel()
-    let startTitle = UILabel()
-    let currentTitle = UILabel()
-    
-    let nameLabel = UILabel()
-    let typeLabel = UILabel()
-    let locationLabel = UILabel()
-    let squareLabel = UILabel()
-    let volumeLabel = UILabel()
-    let startLabel = UILabel()
-    let currentLabel = UILabel()
-    let descriptionLabel = UILabel()
+    private let nameTitle = UILabel()
+    private let typeTitle = UILabel()
+    private let locationTitle = UILabel()
+    private let squareTitle = UILabel()
+    private let volumeTitle = UILabel()
+    private let startTitle = UILabel()
+    private let currentTitle = UILabel()
+    private let nameLabel = UILabel()
+    private let typeLabel = UILabel()
+    private let locationLabel = UILabel()
+    private let squareLabel = UILabel()
+    private let volumeLabel = UILabel()
+    private let startLabel = UILabel()
+    private let currentLabel = UILabel()
+    private let descriptionLabel = UILabel()
     
     init(name: String, type: String, location: String, square: String, volume: String, start: String, current: String, description: String) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-        
         nameLabel.text = name
         typeLabel.text = type
         locationLabel.text = location
@@ -37,12 +34,10 @@ final class ProductDescriptionCell: BaseTableCell {
         startLabel.text = start
         currentLabel.text = current
         descriptionLabel.text = description
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -108,6 +103,7 @@ final class ProductDescriptionCell: BaseTableCell {
             
             descriptionLabel.leadingAnchor.constraint(equalTo: mainCellView.leadingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: mainCellView.trailingAnchor, constant: -10),
+            descriptionLabel.topAnchor.constraint(equalTo: currentTitle.bottomAnchor, constant: 10),
             descriptionLabel.bottomAnchor.constraint(equalTo: mainCellView.bottomAnchor, constant: -10)
         ])
     }

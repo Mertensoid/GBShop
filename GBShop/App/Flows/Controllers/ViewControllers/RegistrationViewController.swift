@@ -8,17 +8,15 @@
 import UIKit
 
 final class RegistrationViewController: BaseScrollViewController {
-    
-    let nicknameTextField = BaseTextField()
-    let loginTextField = BaseTextField()
-    let passwordTextField = BaseTextField()
-    let passwordRepeatTextField = BaseTextField()
-    let registrationButton = ApplyButton()
-    let haveAccountButton = ClearButton()
+    private let nicknameTextField = BaseTextField()
+    private let loginTextField = BaseTextField()
+    private let passwordTextField = BaseTextField()
+    private let passwordRepeatTextField = BaseTextField()
+    private let registrationButton = ApplyButton()
+    private let haveAccountButton = ClearButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addViews()
         layoutViews()
         configure()

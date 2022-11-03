@@ -8,29 +8,21 @@
 import UIKit
 
 final class SettingsViewController: BaseScrollViewController {
-
-    let nameLabel = UILabel()
-    let nameTextField = SmallTextField()
-
-    let surnameLabel = UILabel()
-    let surnameTextField = SmallTextField()
-
-    let emailLabel = UILabel()
-    let emailTextField = SmallTextField()
-
-    let dateLabel = UILabel()
-    let dateTextField = SmallTextField()
-
-    let postLabel = UILabel()
-    let postTextField = SmallTextField()
-    
-    let saveButton = ApplyButton()
-    
-    let verticalGap:CGFloat = 8
+    private let nameLabel = UILabel()
+    private let nameTextField = SmallTextField()
+    private let surnameLabel = UILabel()
+    private let surnameTextField = SmallTextField()
+    private let emailLabel = UILabel()
+    private let emailTextField = SmallTextField()
+    private let dateLabel = UILabel()
+    private let dateTextField = SmallTextField()
+    private let postLabel = UILabel()
+    private let postTextField = SmallTextField()
+    private let saveButton = ApplyButton()
+    private let verticalGap:CGFloat = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addViews()
         layoutViews()
         configure()
@@ -40,22 +32,16 @@ final class SettingsViewController: BaseScrollViewController {
 @objc extension SettingsViewController {
     override func addViews() {
         super.addViews()
-
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
-
         view.addSubview(surnameLabel)
         view.addSubview(surnameTextField)
-
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
-
         view.addSubview(dateLabel)
         view.addSubview(dateTextField)
-
         view.addSubview(postLabel)
         view.addSubview(postTextField)
-        
         view.addSubview(saveButton)
     }
     override func layoutViews() {

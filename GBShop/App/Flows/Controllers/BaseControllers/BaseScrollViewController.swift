@@ -8,12 +8,8 @@
 import UIKit
 
 class BaseScrollViewController: BaseViewController {
-
-    
     let scrollView = UIScrollView()
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
         NotificationCenter.default.addObserver(

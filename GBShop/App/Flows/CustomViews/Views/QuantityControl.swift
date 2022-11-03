@@ -8,21 +8,17 @@
 import UIKit
 
 class QuantityControl: UIView {
-    
     private var quantity = 1
-    
     private let label = UILabel()
     private let decreaseButton = UIButton()
     private let increaseButton = UIButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addViews()
         layoutViews()
         configure()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,7 +36,6 @@ class QuantityControl: UIView {
     func layoutViews() {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 40),
-            //widthAnchor.constraint(equalToConstant: 150),
             
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -52,7 +47,6 @@ class QuantityControl: UIView {
             increaseButton.heightAnchor.constraint(equalToConstant: 40),
             increaseButton.widthAnchor.constraint(equalToConstant: 40),
             increaseButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-
         ])
     }
     func configure() {
@@ -68,12 +62,16 @@ class QuantityControl: UIView {
         decreaseButton.backgroundColor = Resources.Colors.darkRed
         decreaseButton.layer.cornerRadius = 5
         decreaseButton.addTarget(self, action: #selector(decreaseQuantity), for: .touchUpInside)
+        decreaseButton.setOpacity()
+        decreaseButton.makeTapWithButtonShadow(decreaseButton)
         
         increaseButton.translatesAutoresizingMaskIntoConstraints = false
         increaseButton.setTitle("+", for: .normal)
         increaseButton.backgroundColor = Resources.Colors.darkRed
         increaseButton.layer.cornerRadius = 5
         increaseButton.addTarget(self, action: #selector(increaseQuantity), for: .touchUpInside)
+        increaseButton.setOpacity()
+        increaseButton.makeTapWithButtonShadow(increaseButton)
     }
     func decreaseQuantity() {
         if quantity > 1 {

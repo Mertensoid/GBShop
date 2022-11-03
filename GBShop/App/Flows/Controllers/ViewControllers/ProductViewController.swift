@@ -8,19 +8,26 @@
 import UIKit
 
 final class ProductViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let product: String
-    
-    let tableView = UITableView()
-    let addToBasketView = UIView()
-    let quantityControl = QuantityControl()
-    let addToBasketButton = AddToBasketButton()
-    
-    init(product: String) {
-        self.product = product
-        super.init(nibName: nil, bundle: nil)
+    private let tableView = UITableView()
+    private let addToBasketView = UIView()
+    private let quantityControl = QuantityControl()
+    private let addToBasketButton = AddToBasketButton()
+    private let requestFactory = RequestFactory()
+    private let productName: String
+    private let productID: Int
+    private var product: GetGoodResult? = nil {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
+    init(productID: Int, productName: String) {
+        self.productID = productID
+        self.productName = productName
+        super.init(nibName: nil, bundle: nil)
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -29,13 +36,19 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let getGood = requestFactory.makeGetGoodRequestFactory()
+        getGood.getGood(id: productID) { response in
+                switch response.result {
+                case .success(let getGood):
+                    self.product = getGood
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         addViews()
         layoutViews()
         configure()
-    }
-    
-    func configureProduct() {
-        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -44,16 +57,12 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         return 5
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0...3:
+        if product != nil {
             return 1
-        case 4:
-            return 1
-        default:
+        } else {
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -61,7 +70,7 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
         case 1:
             return 80
         case 2:
-            return 365
+            return UITableView.automaticDimension
         case 3:
             return 85
         case 4:
@@ -70,31 +79,32 @@ final class ProductViewController: BaseViewController, UITableViewDelegate, UITa
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell!
         switch indexPath.section {
         case 0:
-            cell = ProductPictureCell()
+            cell = ProductPictureCell(picture: UIImage(named: product?.productPicture ?? "empty_pic") ?? UIImage())
         case 1:
-            cell = ProductPriceCell()
+            cell = ProductPriceCell(price: product?.productPrice ?? 0)
         case 2:
             cell = ProductDescriptionCell(
-                name: "\"Гарант-5\"",
-                type: "порошок",
-                location: "потолочное",
-                square: "до 27 м2",
-                volume: "до 43 м3",
-                start: "электрический",
-                current: "100 мА",
-                description: "Модуль предназначен для локализации и тушения пожаров класса А, В, С и электрооборудования, находящегося под напряжением до 1000 В* в производственных, складских, бытовых помещениях, а также для тушения открытых технологических установок и площадок при скоростях набегающего потока воздуха до 2 м/с.")
+                name: product?.productName ?? "",
+                type: product?.productType ?? "",
+                location: product?.installLocation ?? "",
+                square: product?.protectionSquare ?? "",
+                volume: product?.protectionVolume ?? "",
+                start: product?.startType ?? "",
+                current: product?.startCurrent ?? "",
+                description: product?.productDescription ?? "")
         case 3:
-            cell = ProductRatingCell(rating: 3, reviews: 564)
+            cell = ProductRatingCell(
+                rating: product?.productRating ?? 0,
+                reviews: product?.reviewsNumber ?? 0)
         case 4:
             cell = ProductReviewsCell(
-                name: "Иванов И.И.",
-                date: "16:00 - 15.09.2020",
-                review: "В один прекрасный день к нам в наш скромный офис пришел пожарный инспектор и начал искать до чего докопаться. И естественно нашел, выписал предписание на установку системы пожаротушения. Не знаю кто и каким местом думали когда строилось наше здание, но трубы для водопровода заложили без запаса, по минимуму. Ставить бочку на крышу и разводить трубы как то не хотелось. Начали искать решение и натолкнулись на различные типы модулей пожаротушения. Не буду грузить своими изысканиями, скажу что остановился на порошковых \"Гарантах\".")
+                name: product?.productReview.first?.reviewAuthor ?? "",
+                date: product?.productReview.first?.reviewDate ?? "",
+                review: product?.productReview.first?.text ?? "")
         default:
             cell = UITableViewCell()
         }
@@ -135,7 +145,7 @@ extension ProductViewController {
     }
     override func configure() {
         super.configure()
-        headerTitle.text = product
+        headerTitle.text = productName
         setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(backButtonPressed))
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,6 +164,19 @@ extension ProductViewController {
         navigationController?.popViewController(animated: true)
     }
     @objc func addToBasket() {
-        print("В карзину добавлено \(quantityControl.getQuantity()) шт. \(product)")
+        if let product = self.product {
+            var isAlreadyExistsIndex = -1
+            for index in BasketDataSingleton.shared.basketData.indices {
+                if BasketDataSingleton.shared.basketData[index].0.id == product.id {
+                    isAlreadyExistsIndex = index
+                }
+            }
+            if isAlreadyExistsIndex > -1 {
+                BasketDataSingleton.shared.basketData[isAlreadyExistsIndex].1 += self.quantityControl.getQuantity()
+            } else {
+                BasketDataSingleton.shared.basketData.append((product, self.quantityControl.getQuantity()))
+            }
+            BasketDataSingleton.shared.updateTotalPrice()
+        }
     }
 }
