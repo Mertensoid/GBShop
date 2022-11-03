@@ -8,8 +8,7 @@
 import UIKit
 
 final class SettingsViewController: BaseScrollViewController {
-    
-    let headerLabel = UILabel()
+
     let nameLabel = UILabel()
     let nameTextField = SmallTextField()
 
@@ -41,7 +40,6 @@ final class SettingsViewController: BaseScrollViewController {
 @objc extension SettingsViewController {
     override func addViews() {
         super.addViews()
-        view.addSubview(headerLabel)
 
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
@@ -63,11 +61,8 @@ final class SettingsViewController: BaseScrollViewController {
     override func layoutViews() {
         super.layoutViews()
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            headerLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
             
-            nameLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: verticalGap),
+            nameLabel.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: verticalGap),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: verticalGap),
@@ -109,11 +104,9 @@ final class SettingsViewController: BaseScrollViewController {
     }
     override func configure() {
         super.configure()
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.text = "Настройки"
-        headerLabel.font = Resources.Fonts.helveticaRegular(with: 30)
-        headerLabel.textAlignment = .center
-
+        headerTitle.text = "Настройки"
+        setLeftHeaderButton(image: UIImage(named: "back_arrow_icon") ?? UIImage(), selector: #selector(backButtonPressed))
+        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = "Имя"
         
@@ -138,5 +131,9 @@ final class SettingsViewController: BaseScrollViewController {
 
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.setTitle("Сохранить")
+    }
+    
+    func backButtonPressed() {
+        self.dismiss(animated: true)
     }
 }

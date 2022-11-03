@@ -12,8 +12,8 @@ enum Tabs: Int {
     case basket
     case settings
 }
+
 class TabBarController: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,9 +28,19 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let catalogController = CatalogTableViewController()
+        let catalogController = CatalogViewController()
         let basketController = UIViewController()
         let settingsController = SettingsViewController()
+        
+        let catalogNavigationController = UINavigationController(rootViewController: catalogController)
+        catalogNavigationController.navigationBar.isHidden = true
+        
+        let basketNavigationController = UINavigationController(rootViewController: basketController)
+        basketNavigationController.navigationBar.isHidden = true
+        
+        let settingsNavigationController = UINavigationController(rootViewController: settingsController)
+        settingsNavigationController.navigationBar.isHidden = true
+        
         
         catalogController.tabBarItem = UITabBarItem(
             title: Resources.Strings.TabBarHeaders.catalog,
@@ -46,9 +56,9 @@ class TabBarController: UITabBarController {
             tag: Tabs.settings.rawValue)
         
         setViewControllers([
-            catalogController,
-            basketController,
-            settingsController
+            catalogNavigationController,
+            basketNavigationController,
+            settingsNavigationController
         ], animated: false)
     }
 }

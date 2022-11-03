@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StartViewController: BaseViewController {
+final class StartViewController: UIViewController {
 
     private let logoImageView = UIImageView()
     private let logoTextView = UIImageView()
@@ -15,7 +15,7 @@ final class StartViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         addViews()
         layoutViews()
         configure()
@@ -24,16 +24,14 @@ final class StartViewController: BaseViewController {
 
 extension StartViewController {
     
-    override func addViews() {
-        super.addViews()
+    func addViews() {
         
         view.addSubview(logoImageView)
         view.addSubview(logoTextView)
         view.addSubview(startButton)
     }
     
-    override func layoutViews() {
-        super.layoutViews()
+    func layoutViews() {
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.bottomAnchor.constraint(equalTo: logoTextView.topAnchor, constant: -10),
@@ -50,12 +48,11 @@ extension StartViewController {
             startButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
         ])
-        
     }
-    override func configure() {
-        super.configure()
+    
+    func configure() {
+        view.backgroundColor = Resources.Colors.white
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "logo_picture_vector")
         
@@ -75,6 +72,7 @@ extension StartViewController {
 @objc extension StartViewController {
     func startButtonPressed() {
         let loginVC = LoginViewController()
-        navigationController?.pushViewController(loginVC, animated: true)
+        loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true)
     }
 }

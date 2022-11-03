@@ -7,9 +7,12 @@
 
 import UIKit
 
-class BaseScrollViewController: UIViewController {
+class BaseScrollViewController: BaseViewController {
+
     
     let scrollView = UIScrollView()
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
@@ -42,20 +45,21 @@ class BaseScrollViewController: UIViewController {
 
 @objc extension BaseScrollViewController {
     
-    func addViews() {
+    override func addViews() {
+        super.addViews()
         view.addSubview(scrollView)
     }
-    func layoutViews() {
+    override func layoutViews() {
+        super.layoutViews()
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
-    func configure() {
-        view.backgroundColor = Resources.Colors.white
-        
+    override func configure() {
+        super.configure()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
     }
     
