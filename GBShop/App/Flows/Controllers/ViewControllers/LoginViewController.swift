@@ -87,19 +87,17 @@ extension LoginViewController {
 
 @objc extension LoginViewController {
     func joinButtonPressed() {
-        print("Join button pressed")
+        loginTextField.text!.isEmpty ? CrashlyticsService.shared.sendReport(action: .correctLogin) : CrashlyticsService.shared.sendReport(action: .incorrectLogin)
         let tabVC = TabBarController()
         tabVC.modalPresentationStyle = .fullScreen
         present(tabVC, animated: true)
     }
     func registrationButtonPressed() {
-        print("Registration button pressed")
         let regVC = RegistrationViewController()
         regVC.modalPresentationStyle = .fullScreen
         present(regVC, animated: true)
     }
     func forgotPasswordButtonPressed() {
-        print("Forgot password button pressed")
     }
     func logout() {
         self.dismiss(animated: true)

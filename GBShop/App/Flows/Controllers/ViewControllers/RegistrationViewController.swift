@@ -95,6 +95,7 @@ extension RegistrationViewController {
 
 @objc extension RegistrationViewController {
     func registrationButtonPressed() {
+        CrashlyticsService.shared.sendReport(action: .registration)
         self.dismiss(animated: true)
     }
     func haveAccountButtonPressed() {

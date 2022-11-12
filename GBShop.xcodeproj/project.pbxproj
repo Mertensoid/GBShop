@@ -94,6 +94,13 @@
 		84AC89EB28FC448600EC791E /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EA28FC448600EC791E /* UIButton + ext.swift */; };
 		84AC89EF28FC612200EC791E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC89EE28FC612200EC791E /* TabBarController.swift */; };
 		84ADFD902901075F00FBF068 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADFD8F2901075F00FBF068 /* SettingsCell.swift */; };
+		84C64BC0291F7CE3009C0977 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C64BBF291F7CE3009C0977 /* GoogleService-Info.plist */; };
+		84C64BC1291F7CE3009C0977 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C64BBF291F7CE3009C0977 /* GoogleService-Info.plist */; };
+		84C64BC2291F7CE3009C0977 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C64BBF291F7CE3009C0977 /* GoogleService-Info.plist */; };
+		84C64BC5291F7E4A009C0977 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 84C64BC4291F7E4A009C0977 /* FirebaseAnalytics */; };
+		84C64BC9291F9A6F009C0977 /* Crashlytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C64BC8291F9A6F009C0977 /* Crashlytics.swift */; };
+		84C64BCA291F9A6F009C0977 /* Crashlytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C64BC8291F9A6F009C0977 /* Crashlytics.swift */; };
+		84C64BCB291F9A6F009C0977 /* Crashlytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C64BC8291F9A6F009C0977 /* Crashlytics.swift */; };
 		84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */; };
 		84DAA7E928F9727300D638B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7E828F9727300D638B8 /* StartViewController.swift */; };
 		84DAA7ED28F98AEA00D638B8 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */; };
@@ -221,6 +228,8 @@
 		84AC89EA28FC448600EC791E /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		84AC89EE28FC612200EC791E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		84ADFD8F2901075F00FBF068 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		84C64BBF291F7CE3009C0977 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84C64BC8291F9A6F009C0977 /* Crashlytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crashlytics.swift; sourceTree = "<group>"; };
 		84DAA7E628F96AAA00D638B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84DAA7E828F9727300D638B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84DAA7EC28F98AEA00D638B8 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
@@ -252,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C64BC5291F7E4A009C0977 /* FirebaseAnalytics in Frameworks */,
 				0C75AACBD1B44335CE618CAB /* Pods_GBShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +413,7 @@
 		8499CE2B289FE5B3008A8CA2 /* GBShop */ = {
 			isa = PBXGroup;
 			children = (
+				84C64BBF291F7CE3009C0977 /* GoogleService-Info.plist */,
 				8499CE5D289FE8C2008A8CA2 /* App */,
 				8499CE5E289FE8CD008A8CA2 /* Core */,
 				8499CE5F289FE8D6008A8CA2 /* Resources */,
@@ -445,6 +456,7 @@
 		8499CE5E289FE8CD008A8CA2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				84C64BC7291F9A3E009C0977 /* Services */,
 				846FC350290EB3DF001629CF /* Protocols */,
 				84DAA7F028F98D7600D638B8 /* Extensions */,
 				8499CE6528A14131008A8CA2 /* Network */,
@@ -627,10 +639,10 @@
 				84DAA7E828F9727300D638B8 /* StartViewController.swift */,
 				84567C4528FAECAA00B7E9B3 /* LoginViewController.swift */,
 				842444C728FBBFB200F70154 /* RegistrationViewController.swift */,
-				849C1E6628FC869700BA8C9F /* SettingsViewController.swift */,
-				84EA678E2905179F00632F2D /* ProductViewController.swift */,
 				84EA679229057FD100632F2D /* CatalogViewController.swift */,
 				846FC344290E5240001629CF /* BasketViewController.swift */,
+				849C1E6628FC869700BA8C9F /* SettingsViewController.swift */,
+				84EA678E2905179F00632F2D /* ProductViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -667,6 +679,14 @@
 				849D82F92908F48A008F30EF /* ProductReviewsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		84C64BC7291F9A3E009C0977 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84C64BC8291F9A6F009C0977 /* Crashlytics.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		84DAA7EA28F98AB900D638B8 /* CustomViews */ = {
@@ -787,12 +807,16 @@
 				8499CE26289FE5B3008A8CA2 /* Frameworks */,
 				8499CE27289FE5B3008A8CA2 /* Resources */,
 				95ABD5F837FC2C97D815B1DB /* [CP] Embed Pods Frameworks */,
+				84C64BC6291F811F009C0977 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GBShop;
+			packageProductDependencies = (
+				84C64BC4291F7E4A009C0977 /* FirebaseAnalytics */,
+			);
 			productName = GBShop;
 			productReference = 8499CE29289FE5B3008A8CA2 /* GBShop.app */;
 			productType = "com.apple.product-type.application";
@@ -868,6 +892,9 @@
 				Base,
 			);
 			mainGroup = 8499CE20289FE5B3008A8CA2;
+			packageReferences = (
+				84C64BC3291F7E4A009C0977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8499CE2A289FE5B3008A8CA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -886,6 +913,7 @@
 			files = (
 				8499CE39289FE5B4008A8CA2 /* LaunchScreen.storyboard in Resources */,
 				8499CE36289FE5B4008A8CA2 /* Assets.xcassets in Resources */,
+				84C64BC0291F7CE3009C0977 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,6 +921,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C64BC1291F7CE3009C0977 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +929,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C64BC2291F7CE3009C0977 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +974,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		84C64BC6291F811F009C0977 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		95ABD5F837FC2C97D815B1DB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1090,6 +1139,7 @@
 				849D82F62908F462008F30EF /* ProductDescriptionCell.swift in Sources */,
 				84DAA7E728F96AAA00D638B8 /* SceneDelegate.swift in Sources */,
 				8499CE7828A61316008A8CA2 /* Auth.swift in Sources */,
+				84C64BC9291F9A6F009C0977 /* Crashlytics.swift in Sources */,
 				842444CB28FBC2E300F70154 /* BaseTextField.swift in Sources */,
 				84F85EA228AF4FBC0039E8BC /* AddReview.swift in Sources */,
 				8499CEA628A8FCA4008A8CA2 /* GetGoodResult.swift in Sources */,
@@ -1107,6 +1157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C64BCA291F9A6F009C0977 /* Crashlytics.swift in Sources */,
 				8499CE9328A78E46008A8CA2 /* ResponseCodableTests.swift in Sources */,
 				8499CEB128AA77B6008A8CA2 /* RequestFactoryStub.swift in Sources */,
 				8499CE9528A78F31008A8CA2 /* PostStub.swift in Sources */,
@@ -1128,6 +1179,7 @@
 				84567C4828FAECAA00B7E9B3 /* LoginViewController.swift in Sources */,
 				84567C5228FAFCE000B7E9B3 /* ClearButton.swift in Sources */,
 				8499CE50289FE5B4008A8CA2 /* GBShopUITestsLaunchTests.swift in Sources */,
+				84C64BCB291F9A6F009C0977 /* Crashlytics.swift in Sources */,
 				84567C5628FAFD7300B7E9B3 /* BaseButton.swift in Sources */,
 				84567C4C28FAFBDC00B7E9B3 /* CancelButton.swift in Sources */,
 			);
@@ -1285,6 +1337,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 3JL4VHZJLR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Info.plist;
@@ -1462,6 +1515,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84C64BC3291F7E4A009C0977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84C64BC4291F7E4A009C0977 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84C64BC3291F7E4A009C0977 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8499CE21289FE5B3008A8CA2 /* Project object */;
 }
