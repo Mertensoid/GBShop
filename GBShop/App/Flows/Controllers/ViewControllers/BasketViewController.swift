@@ -45,6 +45,7 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
         return 135
     }
     func deleteButtonTapped(at index: IndexPath) {
+        CrashlyticsService.shared.sendReport(action: .deleteFromBasket)
         BasketDataSingleton.shared.basketData.remove(at: index.row)
         BasketDataSingleton.shared.updateTotalPrice()
         summLabel.text = "Сумма: \(BasketDataSingleton.shared.totalPrice) ₽"
@@ -115,13 +116,16 @@ final class BasketViewController: BaseViewController, UITableViewDelegate, UITab
         summLabel.minimumScaleFactor = 0.5
     }
     func backButtonPressed() {
+        CrashlyticsService.shared.sendReport(action: .logout)
         dismiss(animated: true)
     }
     func clearBasket() {
+        CrashlyticsService.shared.sendReport(action: .deleteFromBasket)
         BasketDataSingleton.shared.basketData.removeAll()
         BasketDataSingleton.shared.updateTotalPrice()
     }
     func buy() {
+        CrashlyticsService.shared.sendReport(action: .payBasket)
         let buyViewController = BaseViewController()
         navigationController?.pushViewController(buyViewController, animated: true)
     }

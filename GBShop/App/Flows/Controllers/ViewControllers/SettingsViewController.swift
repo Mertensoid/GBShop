@@ -120,6 +120,7 @@ final class SettingsViewController: BaseScrollViewController {
     }
     
     func backButtonPressed() {
+        CrashlyticsService.shared.sendReport(action: .logout)
         self.dismiss(animated: true)
     }
 }

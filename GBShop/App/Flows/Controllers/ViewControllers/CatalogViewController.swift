@@ -27,7 +27,6 @@ final class CatalogViewController: BaseViewController, UITableViewDelegate, UITa
         addViews()
         layoutViews()
         configure()
-        
         let getCatalog = requestFactory.makeGetCatalogRequestFactory()
         getCatalog.getCatalog(
             pageNumber: 1,
@@ -39,6 +38,7 @@ final class CatalogViewController: BaseViewController, UITableViewDelegate, UITa
                     print(error.localizedDescription)
                 }
             }
+        CrashlyticsService.shared.sendReport(action: .openCatalog)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,6 +91,7 @@ final class CatalogViewController: BaseViewController, UITableViewDelegate, UITa
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
     func backButtonPressed() {
+        CrashlyticsService.shared.sendReport(action: .logout)
         self.dismiss(animated: true)
     }
     func filterButtonPressed() {

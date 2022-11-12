@@ -67,8 +67,13 @@ extension StartViewController {
 
 @objc extension StartViewController {
     func startButtonPressed() {
+        
+//        let numbers = [0]
+//        let _ = numbers[1]
         let loginVC = LoginViewController()
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true)
     }
 }
+
+
